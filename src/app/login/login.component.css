@@ -4,6 +4,7 @@
 }
 
 .container {
+  display: block;
   max-height: 760px;
   background-color: white;
   border: 15px solid #252A31;
@@ -54,6 +55,7 @@
   background-color: #EFF2F5;
   display: block;
   margin-bottom: 20px;
+  height: 40px;
 }
 
 .cpf p {

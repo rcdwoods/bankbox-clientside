@@ -1,3 +1,4 @@
+import { LoginService } from './../resources/services/login.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,11 +9,18 @@ import { Component, OnInit } from '@angular/core';
 export class LoginPasswordComponent implements OnInit {
 
   name = "Richard"
+  cpf = ""
   password = ""
 
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
 
+  preLogin(cpf: String) {
+    this.loginService.preLogin(cpf).subscribe(
+      (data) => {console.log(data)},
+      (error) => {console.error(error)}
+      )
+  }
 }
