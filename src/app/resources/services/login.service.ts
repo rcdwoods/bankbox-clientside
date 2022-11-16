@@ -13,7 +13,7 @@ export class LoginService {
   constructor(private httpClient: HttpClient) { }
 
   public preLogin(cpf: String): Observable<CostumerBasic> {
-    return this.httpClient.get<CostumerBasic>(`http://api.bankbox.com.br/v1/costumers/${cpf}/basic`)
+    return this.httpClient.get<CostumerBasic>(`https://api.bankbox.com.br/v1/costumers/${cpf}/basic`)
   }
 
   public login(cpf: String, password: String) {
