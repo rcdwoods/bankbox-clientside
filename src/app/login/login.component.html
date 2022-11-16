@@ -1,0 +1,15 @@
+<div class="app grid col-12 md:col-12 lg:col-12">
+  <div class="container grid col-12 md:col-3 lg:col-3">
+    <div class="header grid col-12">
+      <img class="header__logo col-12" src="../assets/imgs/bankbox_logo.png">
+      <p class="header__title col-12">BankBox</p>
+      <p class="header__description col-12">Online, simples e inteligente!</p>
+    </div>
+    <div class="cpf grid col-12">
+      <p class="col-4">Usuário</p>
+      <input class="col-8" pInputText type="text" [(ngModel)]="cpf">
+    </div>
+    <button class="button__login col-12" pButton label="Avançar" [routerLink]="['/login-password']" skipLocationChange [ngClass]="{'button__login--filled' : cpf.length != 0}"></button>
+    <button class="button__register col-12" pButton label="Voltar" [routerLink]="['/']" routerLinkActive="router-link-active" ></button>
+  </div>
+</div>
