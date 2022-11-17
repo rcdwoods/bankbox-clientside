@@ -1,3 +1,4 @@
 export class CostumerBasic {
-  public cpf?: string;
+  public firstName?: string
+  public cpf?: string
 }

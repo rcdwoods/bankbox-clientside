@@ -9,7 +9,7 @@
       <p class="col-4">Usuário</p>
       <input class="col-8" pInputText type="text" [(ngModel)]="cpf">
     </div>
-    <button class="button__login col-12" pButton label="Avançar" (click)="preLogin(cpf)" [routerLink]="['/login-password']" skipLocationChange [ngClass]="{'button__login--filled' : cpf.length != 0}" [disabled]="cpf.length == 0"></button>
+    <button class="button__login col-12" pButton label="Avançar" (click)="preLogin(cpf)" [ngClass]="{'button__login--filled' : cpf.length != 0}" [disabled]="cpf.length == 0"></button>
     <button class="button__register col-12" pButton label="Voltar" [routerLink]="['/']" routerLinkActive="router-link-active" ></button>
   </div>
 </div>

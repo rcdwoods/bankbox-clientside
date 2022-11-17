@@ -1,0 +1,32 @@
+<div class="app grid col-12 md:col-12 lg:col-12">
+  <div class="container grid col-12 md:col-3 lg:col-3">
+    <div class="header grid col-12">
+      <img class="header__logo col-12" src="../assets/imgs/bankbox_logo.png">
+      <p class="header__title col-12">BankBox</p>
+      <p class="header__description col-12">Olá, Pessoa</p>
+      <p class="header__sub-description col-12">Vamos nos conhecer? :)</p>
+    </div>
+    <div class="form grid col-12">
+      <div class="form__text col-3"><p>Nome</p></div>
+      <div class="form__input col-9">
+          <input pInputText type="text" [(ngModel)]="name">
+      </div>
+    </div>
+    <div class="form grid col-12">
+      <div class="form__text col-3"><p>CPF</p></div>
+      <div class="form__input col-9">
+        <input pInputText type="text" [(ngModel)]="cpf" maxlength="14">
+      </div>
+    </div>
+    <div class="form grid col-12">
+      <div class="form__text col-3"><p>Senha</p></div>
+      <div class="form__input col-9">
+        <input pInputText type="password" [(ngModel)]="password" maxlength="6">
+      </div>
+    </div>
+    <button class="button__login col-12" pButton label="Avançar" [ngClass]="{
+      'button__login--filled' : name.length > 3 && cpf.length > 4 && password.length == 6
+   }" [disabled]="password.length != 6" (click)="register(name, cpf, password)"></button>
+    <button class="button__register col-12" pButton label="Voltar" [routerLink]="['/']" routerLinkActive="active" ></button>
+  </div>
+</div>

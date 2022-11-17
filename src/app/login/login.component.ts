@@ -1,6 +1,7 @@
 import { LoginService } from './../resources/services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -11,15 +12,19 @@ export class LoginComponent implements OnInit {
 
   cpf = ""
 
-  constructor(private router: Router, private loginService: LoginService) { }
+  constructor(private router: Router, private loginService: LoginService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
 
   preLogin(cpf: String) {
     this.loginService.preLogin(cpf).subscribe(
-      (data) => {console.log(data)},
-      (error) => {console.error(error)}
+      (data) => {
+        console.log(data)
+        this.loginService.costumerBasic = data
+        this.goToPassword()
+      },
+      (error) => {this.toastr.error('Ops!', 'Usuário não encontrado :(')}
       )
   }
 
