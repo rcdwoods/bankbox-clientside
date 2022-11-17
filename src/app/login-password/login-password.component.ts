@@ -1,3 +1,5 @@
+import { CostumerBasic } from './../resources/models/CostumerBasic';
+import { ToastrService } from 'ngx-toastr';
 import { LoginService } from './../resources/services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -9,27 +11,30 @@ import { Router } from '@angular/router';
 })
 export class LoginPasswordComponent implements OnInit {
 
-  name = "Richard"
-  cpf = ""
+  costumerBasic?: CostumerBasic = new CostumerBasic()
+  name = ""
   password = ""
 
-  constructor(private loginService: LoginService, private router: Router) { }
+  constructor(private loginService: LoginService, private router: Router, private toastrService: ToastrService) { }
 
   ngOnInit(): void {
   }
 
   getUserName() {
-    var costumerName = this.loginService.costumerBasic?.firstName
+    this.costumerBasic = this.loginService.costumerBasic
+    var costumerName = this.costumerBasic?.firstName
     console.log(costumerName)
     if (costumerName == undefined) this.goToInitialPage()
     return costumerName
   }
 
-  preLogin(cpf: String) {
-    this.loginService.preLogin(cpf).subscribe(
-      (data) => {console.log(data)},
-      (error) => {console.error(error)}
-      )
+  login(password: string) {
+    this.loginService.login(this.costumerBasic!!.cpf!!, password).subscribe(
+      (user) => {
+        localStorage.setItem('auth', JSON.stringify(user))
+        this.router.navigateByUrl('home')
+      },
+      (error) => {this.toastrService.error('Senha incorreta :(')})
   }
 
   goToInitialPage() {

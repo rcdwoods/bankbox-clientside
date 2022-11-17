@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  preLogin(cpf: String) {
+  preLogin(cpf: string) {
     this.loginService.preLogin(cpf).subscribe(
       (data) => {
         console.log(data)

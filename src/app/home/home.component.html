@@ -1,0 +1,88 @@
+<div class="app grid col-12">
+  <div class="container grid col-12">
+    <div class="header grid col-12">
+      <div class="header__image col-2">
+        <img src="https://i.pinimg.com/originals/a7/f1/28/a7f128e00359237d80d9b128ab4a16fd.jpg">
+      </div>
+      <div class="header__name col-8">
+        <p>Olá, {{costumer.name}}!</p>
+      </div>
+      <div class="header__configurations col-2">
+        <a href="javascript:;" [routerLink]="['/settings']" routerLinkActive="active"><i class="pi pi-cog header__cog"></i></a>
+      </div>
+    </div>
+    <div class="balance grid col-12">
+      <div class="balance__title col-10">
+        <p>Saldos</p>
+      </div>
+      <div class="balance__visualization col-2">
+        <a href="javascript:;"><i class="pi pi-eye balance__eye" (click)="toggleShowBalance()" *ngIf="showBalance"></i></a>
+        <a href="javascript:;"><i class="pi pi-eye-slash balance__eye" (click)="toggleShowBalance()" *ngIf="!showBalance"></i></a>
+      </div>
+      <div class="balance__checking-account col-5">
+        <p class="balance__subtitle">Conta corrente</p>
+        <div class="balance__value">
+          <p *ngIf="showBalance">{{checkingBalance}}</p>
+          <div class="balance__value--overshadow" *ngIf="!showBalance"></div>
+        </div>
+      </div>
+      <div class="balance__savings-account col-7">
+        <p class="balance__subtitle">Poupança</p>
+        <div class="balance__value">
+          <p *ngIf="showBalance">{{savingsBalance}}</p>
+          <div class="balance__value--overshadow" *ngIf="!showBalance"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="functionalities grid col-12">
+      <div class="functionalities__pix col-4">
+        <div class="functionalities__box">
+          <img src="../../assets/imgs/pix.png">
+          <p>Pix</p>
+        </div>
+      </div>
+      <div class="functionalities__payment col-4">
+        <div class="functionalities__box functionalities__box--midle">
+          <img src="../../assets/imgs/payment.png">
+          <p>Pagar</p>
+        </div>
+      </div>
+      <div class="functionalities__transference col-4">
+        <div class="functionalities__box functionalities__box--last">
+          <img src="../../assets/imgs/transference.png">
+          <p>Transferir</p>
+        </div>
+      </div>
+      <div class="cards grid col-12">
+        <div class="cards__title col-10">
+          <p>Meus Cartões</p>
+        </div>
+        <div class="cards__button col-2"><i class="pi pi-angle-right"></i></div>
+        <div class="cards__items">
+          <div class="cards__card grid col-6" *ngFor="let card of cards">
+            <div class="cards__box grid col-12">
+              <div class="cards__logo col-4">
+                <img src={{card.imgUrl}}>
+              </div>
+              <div class="cards__number col-8">
+                <p>•••• {{card.number}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="banks grid col-12">
+        <div class="banks__title grid col-10">
+          <p>Meus Bancos</p>
+        </div>
+        <div class="banks__button col-2"><i class="pi pi-angle-right"></i></div>
+        <div class="banks__items grid col-12">
+          <div class="banks__item col-12" *ngFor="let bank of banks">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

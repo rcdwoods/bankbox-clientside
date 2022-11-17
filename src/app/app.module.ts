@@ -14,6 +14,8 @@ import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginPasswordComponent } from './login-password/login-password.component';
 import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { RegisterComponent } from './register/register.component';
     LoginComponent,
     WelcomeComponent,
     LoginPasswordComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserAnimationsModule,

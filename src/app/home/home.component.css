@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  height: 100vh;
+  background-color: #3658E1;
+}
+
+.container {
+  display: block;
+  max-height: 760px;
+  background-color: white;
+  border: 15px solid #252A31;
+  border-radius: 12px;
+  min-width: 400px;
+  max-width: 400px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.header {
+  padding-top: 80px;
+}
+
+.header__image {
+
+}
+
+.header__image p {
+  padding-top: 9px;
+  font-size: 26px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.header__image img {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  background-color: #65696d;
+}
+
+.header__name {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.header__name p {
+  font-size: 22px;
+}
+
+.header__configurations {
+  padding-top: 12px;
+}
+
+.header__cog {
+  float: right;
+  font-size: 24px;
+  color: #8EA3B7;
+}
+
+.balance {
+  padding-top: 30px;
+}
+
+.balance__title p {
+  font-size: 22px;
+}
+
+.balance__eye {
+  float: right;
+  font-size: 24px;
+  color: #8EA3B7;
+}
+
+.balance__subtitle {
+  font-family: 'Circular Std Book';
+  color: #46505e;
+  font-size: 14px;
+}
+
+.balance__value {
+  min-height: 36px;
+  padding-top: 5px;
+}
+
+.balance__value p {
+  font-size: 24px;
+  color: #3658E1;
+}
+
+.balance__value--overshadow {
+  margin-top: 10px;
+  height: 12px;
+  width: 70px;
+  border-radius: 8px;
+  background-color: #DEE4FD;
+}
+
+.balance__checking-account {
+  padding-top: 15px;
+}
+
+.balance__savings-account {
+  padding-top: 15px;
+}
+
+.functionalities {
+  padding-top: 30px;
+}
+
+.functionalities__box {
+  padding-top: 15px;
+  background-color: #EFF2F5;
+  height: 80px;
+  width: 102px;
+  border-radius: 8px;
+}
+
+.functionalities__box--midle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.functionalities__box--last {
+  float: right;
+}
+
+.functionalities__box img {
+  text-align: center;
+  height: 29px;
+  width: 29px;
+  margin: auto;
+  display: block;
+}
+
+.functionalities__box p {
+  margin-top: 3px;
+  font-family: 'Circular Std Book';
+  font-size: 14px;
+  text-align: center;
+}
+
+.cards {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 40px;
+}
+
+.cards__card {
+  padding-top: 20px;
+}
+
+.cards__items {
+  min-width: 120px;
+  overflow-x: auto;
+  display: flex;
+}
+
+.cards__items::-webkit-scrollbar {
+  width: 0;
+}
+
+.cards__box {
+  height: 50px;
+  width: 150px;
+  background-color: #D2D4E1;
+  border-radius: 8px;
+}
+
+.cards__button i {
+  padding-top: 4px;
+  float: right;
+  font-size: 24px;
+  color: #8EA3B7;
+}
+
+.cards__title p {
+  font-size: 22px;
+}
+
+.cards__logo {
+  padding-top: 7px;
+  padding-left: 7px;
+}
+
+.cards__number {
+  padding-top: 23px;
+  padding-right: 7px;
+  text-align: right;
+}
+
+.cards__number p {
+  color: white;
+}
+
+.banks {
+  padding-top: 40px;
+}
+
+.banks__title p {
+  font-size: 22px;
+}
+
+.banks__items {
+  padding-top: 20px;
+}
+
+.banks__item {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  height: 200px;
+  width: 100%;
+  border-radius: 16px;
+  background-color: #EFF2F5;
+}
+
+.banks__item:last-of-type {
+  margin-top: -120px;
+}
+
+.banks__button i {
+  padding-top: 4px;
+  float: right;
+  font-size: 24px;
+  color: #8EA3B7;
+}
+
+@media(max-width: 500px) {
+  .app {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    min-width: none;
+    max-width: none;
+  }
+
+  .container {
+    padding: 0;
+    margin: 0;
+    height: auto;
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    min-width: 0px;
+    max-width: none;
+  }
+}

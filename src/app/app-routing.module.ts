@@ -1,3 +1,5 @@
+import { SettingsComponent } from './settings/settings.component';
+import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginPasswordComponent } from './login-password/login-password.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -9,7 +11,9 @@ const routes: Routes = [
   { path: '', component: WelcomeComponent, },
   { path: 'login', component: LoginComponent },
   { path: 'login-password', component: LoginPasswordComponent },
-  { path: 'register', component: RegisterComponent }
+  { path: 'register', component: RegisterComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'settings', component: SettingsComponent }
 ];
 
 @NgModule({

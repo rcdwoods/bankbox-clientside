@@ -1,0 +1,60 @@
+<div class="app grid col-12">
+  <div class="container grid col-12">
+    <div class="header col-12">
+      <a href="#" [routerLink]="['/home']" routerLinkActive="active" ><i class="pi pi-arrow-left"></i></a>
+    </div>
+    <div class="menu col-12 grid">
+      <div class="menu__title col-12">
+        <p>Configurações</p>
+      </div>
+        <div class="menu__item col-12 grid">
+          <a href="javascript:;" class="col-12 grid">
+            <div class="menu__image col-1"><img src="../../assets/imgs/user.png"></div>
+            <div class="menu__text col-9"><p>Meus dados</p></div>
+            <div class="menu__button col-2"><a href="javascript:;"><i class="pi pi-angle-right"></i></a></div>
+          </a>
+        </div>
+      <div class="menu__item col-12 grid">
+        <a href="javascript:;" class="col-12 grid">
+          <div class="menu__image col-1"><img src="../../assets/imgs/share.png"></div>
+          <div class="menu__text col-9"><p>Meus compartilhamentos</p></div>
+          <div class="menu__button col-2"><a href="javascript:;"><i class="pi pi-angle-right"></i></a></div>
+        </a>
+      </div>
+      <div class="menu__item col-12 grid">
+        <a href="javascript:;" class="col-12 grid">
+          <div class="menu__image col-1"><img src="../../assets/imgs/key.png"></div>
+          <div class="menu__text col-9"><p>Alterar senha</p></div>
+          <div class="menu__button col-2"><a href="javascript:;"><i class="pi pi-angle-right"></i></a></div>
+        </a>
+      </div>
+      <div class="menu__item col-12 grid">
+        <a href="javascript:;" class="col-12 grid">
+          <div class="menu__image col-1"><img src="../../assets/imgs/flag.png"></div>
+          <div class="menu__text col-9"><p>Notificações</p></div>
+          <div class="menu__button col-2"><a href="javascript:;"><i class="pi pi-angle-right"></i></a></div>
+        </a>
+      </div>
+      <div class="menu__item col-12 grid">
+        <a href="javascript:;" class="col-12 grid">
+          <div class="menu__image col-1"><img src="../../assets/imgs/information-circle.png"></div>
+          <div class="menu__text col-9"><p>Sobre</p></div>
+          <div class="menu__button col-2"><a href="javascript:;"><i class="pi pi-angle-right"></i></a></div>
+        </a>
+      </div>
+      <div class="menu__item col-12 grid">
+        <a href="javascript:;" class="col-12 grid">
+          <div class="menu__image col-1"><img src="../../assets/imgs/annotation.png"></div>
+          <div class="menu__text col-9"><p>Fale conosco</p></div>
+          <div class="menu__button col-2"><a href="javascript:;"><i class="pi pi-angle-right"></i></a></div>
+        </a>
+      </div>
+    </div>
+    <div class="exit">
+      <button class="exit__button col-12" pButton label="Sair do BankBox" (click)="logout()"></button>
+    </div>
+    <div class="footer">
+      <p>BankBox v1.0.0</p>
+    </div>
+  </div>
+</div>
