@@ -13,6 +13,6 @@ export class RegisterService {
   }
 
   public register(costumerRegister: CostumerRegister): Observable<CostumerRegister> {
-    return this.httpClient.post<CostumerRegister>('http://localhost:8080/v1/costumers', costumerRegister)
+    return this.httpClient.post<CostumerRegister>('https://api.bankbox.com.br/v1/costumers', costumerRegister)
   }
 }
