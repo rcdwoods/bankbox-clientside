@@ -24,6 +24,8 @@
             ],
             "styles": [
               "src/styles.css",
+              "src/assets/fonts/circular-std-book.ttf",
+              "src/assets/fonts/circular-std-medium-500.ttf",
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeflex/primeflex.css",
               "node_modules/primeng/resources/themes/saga-blue/theme.css",
