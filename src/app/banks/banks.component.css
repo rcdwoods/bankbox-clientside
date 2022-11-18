@@ -49,7 +49,7 @@
   margin-right: auto;
   border-radius: 8px;
   background-color: #EFF2F5;
-  height: 30px;
+  height: 32px;
 }
 
 .menu__options a {
@@ -61,9 +61,10 @@
 }
 
 .menu__option p {
+  color: #626770;
   text-align: center;
   font-family: 'Circular Std Book';
-  padding-top: 4px;
+  padding-top: 5px;
 }
 
 .menu__option--selected {
@@ -102,11 +103,11 @@
 
 .banks__balance p:first-of-type {
   font-size: 22px;
-  color: white;
+  color: rgb(241, 240, 245);
 }
 
 .banks__balance p:last-of-type {
-  color: white;
+  color: rgb(241, 240, 245);
   font-size: 12px;
   font-family: 'Circular Std Book';
 }
@@ -117,7 +118,7 @@
 
 .banks__account-type p {
   font-family: 'Circular Std Book';
-  color: white;
+  color: rgb(241, 240, 245);
   font-size: 14px;
 }
 
@@ -132,7 +133,7 @@
 }
 
 .banks__agency p:last-of-type {
-  color: white;
+  color: rgb(241, 240, 245);
   font-size: 18px;
 }
 
@@ -147,7 +148,7 @@
 }
 
 .banks__account p:last-of-type {
-  color: white;
+  color: rgb(241, 240, 245);
   font-size: 18px;
 }
 

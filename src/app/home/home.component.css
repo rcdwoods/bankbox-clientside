@@ -223,7 +223,7 @@
   height: 200px;
   width: 100%;
   border-radius: 16px;
-  background-color: #EFF2F5;
+  background-color: #f1f5f8;
 }
 
 .banks__balance {
@@ -239,6 +239,16 @@
   font-size: 12px;
   font-family: 'Circular Std Book';
   color: #6f757e;
+}
+
+.banks__value--overshadow {
+  margin-top: 10px;
+  margin-bottom: 6px;
+  margin-left: 125px;
+  height: 12px;
+  width: 70px;
+  border-radius: 8px;
+  background-color: #DEE4FD;
 }
 
 .banks__account-type {

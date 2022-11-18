@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BanksComponent implements OnInit {
 
+  selectedBank = {};
   selectedOption = 'corrente';
   banks = [
     {
@@ -45,4 +46,11 @@ export class BanksComponent implements OnInit {
     this.selectedOption = option
   }
 
+  selectBank(bank: any) {
+    console.log(this.banks)
+    let index = this.banks.indexOf(bank)
+    let lastValue = this.banks[this.banks.length - 1]
+    this.banks[index] = lastValue
+    this.banks[this.banks.length - 1] = bank
+  }
 }

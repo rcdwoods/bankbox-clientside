@@ -86,7 +86,8 @@
                 <img src={{bank.imgUrl}}>
               </div>
               <div class="banks__balance col-8">
-                <p>{{bank.balance}}</p>
+                <p *ngIf="showBalance">{{bank.balance}}</p>
+                <div class="banks__value--overshadow" *ngIf="!showBalance"></div>
                 <p>Saldo disponível</p>
               </div>
               <div class="banks__account-type col-12">
