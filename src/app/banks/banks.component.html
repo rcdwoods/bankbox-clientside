@@ -1,0 +1,51 @@
+<div class="app grid col-12">
+  <div class="container grid col-12">
+    <div class="header col-12">
+      <a href="#" [routerLink]="['/home']" routerLinkActive="active" ><i class="pi pi-arrow-left"></i></a>
+      <div class="header__title col-12">
+        <p>Meus bancos</p>
+      </div>
+    </div>
+    <div class="menu grid col-12">
+      <div class="menu__options grid col-10">
+        <a class="col-6" href="javascript:;" (click)="selectOption('corrente')">
+          <menu class="menu__option col-12" [ngClass]="{'menu__option--selected ': selectedOption == 'corrente'}">
+            <p>Corrente</p>
+          </menu>
+        </a>
+        <a class="col-6" href="javascript:;" (click)="selectOption('poupanca')">
+          <menu class="menu__option col-12" [ngClass]="{'menu__option--selected ': selectedOption == 'poupanca'}">
+            <p>Poupança</p>
+          </menu>
+        </a>
+      </div>
+    </div>
+    <div class="banks grid col-12">
+      <div class="banks__items grid col-12">
+        <div class="banks__item grid col-12" *ngFor="let bank of banks" [ngStyle]="getStyle(bank)">
+          <div class="banks__logo col-4">
+            <img src={{bank.imgUrl}}>
+          </div>
+          <div class="banks__balance col-8">
+            <p>{{bank.balance}}</p>
+            <p>Saldo disponível</p>
+          </div>
+          <div class="banks__account-type col-12">
+            <p>{{bank.accountType}}</p>
+          </div>
+          <div class="banks__agency col-3">
+            <p>Agência</p>
+            <p>{{bank.agency}}</p>
+          </div>
+          <div class="banks__account col-9">
+            <p>Conta</p>
+            <p>{{bank.accountNumber}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="banks__button col-12">
+        <button class="col-12" pButton label="Adicionar conta"></button>
+      </div>
+    </div>
+  </div>
+</div>

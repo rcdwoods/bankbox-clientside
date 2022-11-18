@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  height: 100vh;
+  background-color: #3658E1;
+}
+
+.container {
+  display: block;
+  max-height: 760px;
+  background-color: white;
+  border: 15px solid #252A31;
+  border-radius: 12px;
+  min-width: 400px;
+  max-width: 400px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.header {
+  padding-top: 40px;
+}
+
+.header__title {
+  padding-top: 40px;
+}
+
+.header__title p {
+  font-size: 22px;
+}
+
+.header i {
+  font-size: 20px;
+}
+
+.menu {
+  padding-top: 30px;
+  width: 100%;
+}
+
+.menu__options {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  background-color: #EFF2F5;
+  height: 30px;
+}
+
+.menu__options a {
+  text-decoration: none;
+}
+
+.menu__option {
+  height: 100%;
+}
+
+.menu__option p {
+  text-align: center;
+  font-family: 'Circular Std Book';
+  padding-top: 4px;
+}
+
+.menu__option--selected {
+  border-radius: 8px;
+  background-color: #3658E1;
+}
+
+.menu__option--selected p {
+  color: white;
+}
+
+.banks {
+  padding-top: 25px;
+}
+
+.banks__title p {
+  font-size: 22px;
+}
+
+.banks__items {
+  padding-top: 20px;
+}
+
+.banks__item {
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  height: 200px;
+  width: 100%;
+  border-radius: 16px;
+  background-color: #EFF2F5;
+}
+
+.banks__balance {
+  text-align: right;
+}
+
+.banks__balance p:first-of-type {
+  font-size: 22px;
+  color: white;
+}
+
+.banks__balance p:last-of-type {
+  color: white;
+  font-size: 12px;
+  font-family: 'Circular Std Book';
+}
+
+.banks__account-type {
+  padding-top: 30px;
+}
+
+.banks__account-type p {
+  font-family: 'Circular Std Book';
+  color: white;
+  font-size: 14px;
+}
+
+.banks__agency {
+
+}
+
+.banks__agency p:first-of-type {
+  color: rgb(228, 228, 228);
+  font-family: 'Circular Std Book';
+  font-size: 12px;
+}
+
+.banks__agency p:last-of-type {
+  color: white;
+  font-size: 18px;
+}
+
+.banks__account {
+
+}
+
+.banks__account p:first-of-type {
+  color: rgb(228, 228, 228);
+  font-family: 'Circular Std Book';
+  font-size: 12px;
+}
+
+.banks__account p:last-of-type {
+  color: white;
+  font-size: 18px;
+}
+
+.banks__item:first-of-type {
+  margin-top: 0 !important;
+}
+
+.banks__item:last-of-type {
+  margin-top: -120px;
+}
+
+.banks__button {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.banks__button button {
+  height: 50px;
+  border-radius: 6px;
+  background-color: white;
+  border-color: white;
+}
+
+.banks__button button:hover {
+  background-color: #4c6ae2;
+}
+
+.banks__button button:hover::ng-deep .p-button-label {
+  border: none;
+  color: white;
+}
+
+@media(max-width: 500px) {
+  .app {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    min-width: none;
+    max-width: none;
+  }
+
+  .container {
+    padding: 0;
+    margin: 0;
+    height: auto;
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    min-width: 0px;
+    max-width: none;
+  }
+}
