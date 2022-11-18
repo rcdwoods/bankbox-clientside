@@ -1,10 +1,10 @@
 @font-face {
-  font-family: 'Circular Std', 'Arial Black';
+  font-family: 'Circular Std'';
   src: url('../src/assets/fonts/circular-std-medium-500.ttf');
 }
 
 @font-face {
-  font-family: 'Cirtular Std Book', 'Arial Black';
+  font-family: 'Cirtular Std Book';
   src: url('../src/assets/fonts/circular-std-book.ttf');
 }
 
