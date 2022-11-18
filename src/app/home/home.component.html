@@ -73,34 +73,38 @@
         </div>
       </div>
       <div class="banks grid col-12">
-        <div class="banks__title grid col-10">
-          <p>Meus Bancos</p>
-        </div>
-        <div class="banks__arrow col-2"><i class="pi pi-angle-right"></i></div>
+        <a class="grid col-12" href="javascript:;" [routerLink]="['/banks']" routerLinkActive="router-link-active" >
+          <div class="banks__title grid col-10">
+            <p>Meus Bancos</p>
+          </div>
+          <div class="banks__arrow col-2"><i class="pi pi-angle-right"></i></div>
+        </a>
         <div class="banks__items grid col-12">
           <div class="banks__item grid col-12" *ngFor="let bank of banks">
-            <div class="banks__logo col-4">
-              <img src={{bank.imgUrl}}>
-            </div>
-            <div class="banks__balance col-8">
-              <p>{{bank.balance}}</p>
-              <p>Saldo disponível</p>
-            </div>
-            <div class="banks__account-type col-12">
-              <p>{{bank.accountType}}</p>
-            </div>
-            <div class="banks__agency col-3">
-              <p>Agência</p>
-              <p>{{bank.agency}}</p>
-            </div>
-            <div class="banks__account col-9">
-              <p>Conta</p>
-              <p>{{bank.accountNumber}}</p>
-            </div>
+            <a class="grid col-12" href="javascript:;" (click)="selectBank(bank)">
+              <div class="banks__logo col-4">
+                <img src={{bank.imgUrl}}>
+              </div>
+              <div class="banks__balance col-8">
+                <p>{{bank.balance}}</p>
+                <p>Saldo disponível</p>
+              </div>
+              <div class="banks__account-type col-12">
+                <p>{{bank.accountType}}</p>
+              </div>
+              <div class="banks__agency col-3">
+                <p>Agência</p>
+                <p>{{bank.agency}}</p>
+              </div>
+              <div class="banks__account col-9">
+                <p>Conta</p>
+                <p>{{bank.accountNumber}}</p>
+              </div>
+            </a>
           </div>
         </div>
         <div class="banks__button col-12">
-          <button class="col-12" pButton label="Adicionar conta"></button>
+          <button class="col-12" pButton label="Adicionar conta" [routerLink]="['/choose-bank']" routerLinkActive="active" ></button>
         </div>
       </div>
     </div>

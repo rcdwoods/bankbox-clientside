@@ -1,0 +1,31 @@
+<div class="app grid col-12">
+  <div class="container grid col-12">
+    <div class="header grid col-12">
+      <a class="col-12" href="javascript:;" [routerLink]="['/home']" routerLinkActive="active"><i class="pi pi-arrow-left"></i></a>
+      <div class="header__title col-12">
+        <p>Qual conta você quer adicionar?</p>
+      </div>
+    </div>
+    <div class="search col-12">
+      <span class="search__input p-input-icon-right">
+          <i class="pi pi-search"></i>
+          <input type="text" placeholder="Pesquisar banco" pInputText>
+      </span>
+    </div>
+    <div class="options grid col-12">
+      <a class="grid col-12" href="javascript:;">
+        <div class="options__item grid col-12" *ngFor="let bank of banks">
+          <div class="options__logo col-2">
+            <img src={{bank.imgUrl}}>
+          </div>
+          <div class="options__name col-8">
+            <p>{{bank.name}}</p>
+          </div>
+          <div class="options__arrow col-2">
+            <i class="pi pi-angle-right"></i>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

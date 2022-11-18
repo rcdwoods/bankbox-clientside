@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   checkingBalance = 'R$ 0,00'
   savingsBalance = 'R$ 13,24'
   showBalance = true;
+  selectedBank = {};
   cards = [
     {
       brand: 'VISA',
@@ -57,7 +58,14 @@ export class HomeComponent implements OnInit {
   }
 
   toggleShowBalance() {
-    this.showBalance = !this.showBalance;
+    this.showBalance = !this.showBalance
   }
 
+  selectBank(bank: any) {
+    console.log(this.banks)
+    let index = this.banks.indexOf(bank)
+    let lastValue = this.banks[this.banks.length - 1]
+    this.banks[index] = lastValue
+    this.banks[this.banks.length - 1] = bank
+  }
 }

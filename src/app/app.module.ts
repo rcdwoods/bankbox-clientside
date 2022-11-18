@@ -16,6 +16,8 @@ import { LoginPasswordComponent } from './login-password/login-password.componen
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { SettingsComponent } from './settings/settings.component';
+import { BanksComponent } from './banks/banks.component';
+import { BanksChooseComponent } from './banks-choose/banks-choose.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { SettingsComponent } from './settings/settings.component';
     LoginPasswordComponent,
     RegisterComponent,
     HomeComponent,
-    SettingsComponent
+    SettingsComponent,
+    BanksComponent,
+    BanksChooseComponent
   ],
   imports: [
     BrowserAnimationsModule,
