@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Cirtular Std Book';
+  src: url('../src/assets/fonts/circular-std-book.ttf');
+}
+
 * {
   margin: 0;
   padding: 0;
