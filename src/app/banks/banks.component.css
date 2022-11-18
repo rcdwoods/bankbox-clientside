@@ -62,7 +62,7 @@
 
 .menu__option p {
   text-align: center;
-  font-family: 'Circular Std Book';
+  font-family: 'Circular Std Book', Arial;
   padding-top: 4px;
 }
 
@@ -108,7 +108,7 @@
 .banks__balance p:last-of-type {
   color: white;
   font-size: 12px;
-  font-family: 'Circular Std Book';
+  font-family: 'Circular Std Book', Arial;
 }
 
 .banks__account-type {
@@ -116,7 +116,7 @@
 }
 
 .banks__account-type p {
-  font-family: 'Circular Std Book';
+  font-family: 'Circular Std Book', Arial;
   color: white;
   font-size: 14px;
 }
@@ -127,7 +127,7 @@
 
 .banks__agency p:first-of-type {
   color: rgb(228, 228, 228);
-  font-family: 'Circular Std Book';
+  font-family: 'Circular Std Book', Arial;
   font-size: 12px;
 }
 
@@ -142,7 +142,7 @@
 
 .banks__account p:first-of-type {
   color: rgb(228, 228, 228);
-  font-family: 'Circular Std Book';
+  font-family: 'Circular Std Book', Arial;
   font-size: 12px;
 }
 

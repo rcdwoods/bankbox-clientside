@@ -1,8 +1,3 @@
-@font-face {
-  font-family: 'Cirtular Std Book';
-  src: url('../../../src/assets/fonts/circular-std-book.ttf');
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -85,7 +80,7 @@
 }
 
 .balance__subtitle {
-  font-family: 'Circular Std Book';
+  font-family: 'Circular Std Book', 'Arial';
   color: #46505e;
   font-size: 14px;
 }
@@ -147,7 +142,7 @@
 
 .functionalities__box p {
   margin-top: 3px;
-  font-family: 'Circular Std Book';
+  font-family: 'Circular Std Book', 'Arial';
   font-size: 14px;
   text-align: center;
 }
@@ -241,7 +236,7 @@
 
 .banks__balance p:last-of-type {
   font-size: 12px;
-  font-family: 'Circular Std Book';
+  font-family: 'Circular Std Book', 'Arial';
 }
 
 .banks__account-type {
@@ -257,7 +252,7 @@
 }
 
 .banks__agency p:first-of-type {
-  font-family: 'Circular Std Book';
+  font-family: 'Circular Std Book', 'Arial';
   font-size: 12px;
 }
 
@@ -270,7 +265,7 @@
 }
 
 .banks__account p:first-of-type {
-  font-family: 'Circular Std Book';
+  font-family: 'Circular Std Book', 'Arial';
   font-size: 12px;
 }
 
