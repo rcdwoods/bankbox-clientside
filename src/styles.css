@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Circular Std', 'Arial Black';
-  src: url('https://s3.amazonaws.com/api.bankbox.com.br/circular-std-medium-500.ttf');
+  src: url('../src/assets/fonts/circular-std-medium-500.ttf');
 }
 
 @font-face {
   font-family: 'Cirtular Std Book', 'Arial Black';
-  src: url('https://s3.amazonaws.com/api.bankbox.com.br/circular-std-book.ttf');
+  src: url('../src/assets/fonts/circular-std-book.ttf');
 }
 
 * {
