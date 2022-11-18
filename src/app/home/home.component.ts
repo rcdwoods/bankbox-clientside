@@ -33,16 +33,18 @@ export class HomeComponent implements OnInit {
   banks = [
     {
       name: 'ITAU',
+      imgUrl: '../../assets/imgs/banks/itau.png',
       accountType: 'Conta corrente',
       agency: '0134',
       accountNumber: '1242-3',
       balance: 'R$ 13,24'
     },
     {
-      name: 'BRADESCO',
-      accountType: 'Conta corrente',
-      agency: '1567',
-      account: '7759-2',
+      name: 'NUBANK',
+      imgUrl: '../../assets/imgs/banks/nubank.png',
+      accountType: 'Conta poupança',
+      agency: '1759',
+      accountNumber: '8255-7',
       balance: 'R$ 100,00'
     }
   ]

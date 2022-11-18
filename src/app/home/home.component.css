@@ -212,6 +212,7 @@
 }
 
 .banks__item {
+  padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   height: 200px;
   width: 100%;
@@ -219,15 +220,88 @@
   background-color: #EFF2F5;
 }
 
+.banks__balance {
+  text-align: right;
+}
+
+.banks__balance p:first-of-type {
+  font-size: 22px;
+  color: #3658E1;
+}
+
+.banks__balance p:last-of-type {
+  font-size: 12px;
+  font-family: 'Circular Std Book';
+}
+
+.banks__account-type {
+  padding-top: 30px;
+}
+
+.banks__account-type p {
+  font-size: 14px;
+}
+
+.banks__agency {
+
+}
+
+.banks__agency p:first-of-type {
+  font-family: 'Circular Std Book';
+  font-size: 12px;
+}
+
+.banks__agency p:last-of-type {
+  font-size: 18px;
+}
+
+.banks__account {
+
+}
+
+.banks__account p:first-of-type {
+  font-family: 'Circular Std Book';
+  font-size: 12px;
+}
+
+.banks__account p:last-of-type {
+  font-size: 18px;
+}
+
+.banks__item:first-of-type {
+  margin-top: 0 !important;
+}
+
 .banks__item:last-of-type {
   margin-top: -120px;
 }
 
-.banks__button i {
+.banks__arrow i {
   padding-top: 4px;
   float: right;
   font-size: 24px;
   color: #8EA3B7;
+}
+
+.banks__button {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.banks__button button {
+  height: 50px;
+  border-radius: 6px;
+  background-color: white;
+  border-color: white;
+}
+
+.banks__button button:hover {
+  background-color: #4c6ae2;
+}
+
+.banks__button button:hover::ng-deep .p-button-label {
+  border: none;
+  color: white;
 }
 
 @media(max-width: 500px) {
