@@ -18,14 +18,17 @@ export class LoginService {
     return this.httpClient.get<CostumerBasic>(`https://api.bankbox.com.br/v1/costumers/${cpf}/basic`)
   }
 
-  public login(cpf: String, password: String): Observable<Costumer> {
-    console.log(`cpf: ${cpf} password: ${password}`)
-    var headers = new HttpHeaders(({ Authorization: 'Basic ' + btoa(cpf + ':' + password) }));
+  public login(authData: string): Observable<Costumer> {
+    var headers = new HttpHeaders(({ Authorization: 'Basic ' + authData }));
     return this.httpClient.get<Costumer>(`https://api.bankbox.com.br/v1/me`, { headers })
   }
 
   public logout() {
     localStorage.removeItem('auth')
     this.router.navigateByUrl('')
+  }
+
+  public getUser(): Costumer {
+    return JSON.parse(localStorage.getItem('auth')!!) as Costumer
   }
 }
