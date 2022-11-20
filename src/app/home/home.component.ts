@@ -1,4 +1,4 @@
-import { Bank } from './../resources/models/Bank';
+import { BankAccount } from './../resources/models/BankAccount';
 import { BanksService } from './../resources/services/banks.service';
 import { BalanceDetails } from './../resources/models/BalanceDetails';
 import { CostumerService } from './../resources/services/costumer.service';
@@ -34,17 +34,7 @@ export class HomeComponent implements OnInit {
       number: '9257'
     }
   ]
-  banks?: Bank[]
-
-  getImgUrl(bank: Bank) {
-    if (bank.bank_name === 'ITAU') return '../../assets/imgs/banks/itau.png'
-    else return '../../assets/imgs/banks/nubank.png'
-  }
-
-  getAccountType(bank: Bank) {
-    if (bank.bank_account_type === 'CHECKING') return 'Conta corrente'
-    else return 'Conta poupança'
-  }
+  banks?: BankAccount[]
 
   constructor(private router: Router, private costumerService: CostumerService, private banksService: BanksService) { }
 
@@ -53,7 +43,7 @@ export class HomeComponent implements OnInit {
     this.banksService.getBanks().subscribe(
       (data) => {
         console.log(data)
-        this.banks = data
+        this.banks = data.map(bank => Object.assign(new BankAccount(), bank))
       },
       (erro) => console.log('Erro ao obter bancos')
     )
@@ -68,7 +58,7 @@ export class HomeComponent implements OnInit {
     this.showBalance = !this.showBalance
   }
 
-  selectBank(bank: any) {
+  selectBank(bank: BankAccount) {
     let index = this.banks!!.indexOf(bank)
     let lastValue = this.banks!![this.banks!!.length - 1]
     this.banks!![index] = lastValue

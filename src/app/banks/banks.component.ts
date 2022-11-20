@@ -1,4 +1,4 @@
-import { Bank } from './../resources/models/Bank';
+import { BankAccount } from './../resources/models/BankAccount';
 import { BanksService } from './../resources/services/banks.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -11,7 +11,7 @@ export class BanksComponent implements OnInit {
 
   selectedBank = {};
   selectedOption = 'corrente';
-  banks: Bank[] = []
+  banks: BankAccount[] = []
 
   constructor(private banksService: BanksService) { }
 
@@ -19,32 +19,10 @@ export class BanksComponent implements OnInit {
     this.banksService.getBanks().subscribe(
       (data) => {
         console.log(data)
-        this.banks = data
+        this.banks = data.map(bank => Object.assign(new BankAccount(), bank))
       },
       (erro) => console.log('Erro ao obter bancos')
     )
-  }
-
-  getBankColor(bank: Bank) {
-    if (bank.bank_name === 'ITAU') return '#EF761C'
-    else return '#781BC9'
-  }
-
-  getImgUrl(bank: Bank) {
-    if (bank.bank_name === 'ITAU') return '../../assets/imgs/banks/itau.png'
-    else return '../../assets/imgs/banks/nubank.png'
-  }
-
-  getAccountType(bank: Bank) {
-    if (bank.bank_account_type === 'CHECKING') return 'Conta corrente'
-    else return 'Conta poupança'
-  }
-
-  getStyle(bank: any) {
-    let styles = {
-      'background-color': this.getBankColor(bank)
-    }
-    return styles
   }
 
   selectOption(option: string) {

@@ -22,17 +22,17 @@
     </div>
     <div class="banks grid col-12">
       <div class="banks__items grid col-12">
-        <div class="banks__item grid col-12" *ngFor="let bank of banks" [ngStyle]="getStyle(bank)">
+        <div class="banks__item grid col-12" *ngFor="let bank of banks" [ngStyle]="bank.getStyle()">
           <a class="grid col-12" href="javascript:;" (click)="selectBank(bank)">
             <div class="banks__logo col-4">
-              <img src={{getImgUrl(bank)}}>
+              <img src={{bank.bank?.img_url}}>
             </div>
             <div class="banks__balance col-8">
               <p>{{bank.balance}}</p>
               <p>Saldo disponível</p>
             </div>
             <div class="banks__account-type col-12">
-              <p>{{getAccountType(bank)}}</p>
+              <p>Oiu</p>
             </div>
             <div class="banks__agency col-3">
               <p>Agência</p>
