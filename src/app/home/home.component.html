@@ -5,7 +5,7 @@
         <img src="https://i.pinimg.com/originals/a7/f1/28/a7f128e00359237d80d9b128ab4a16fd.jpg">
       </div>
       <div class="header__name col-8">
-        <p>Olá, {{costumer.name}}!</p>
+        <p>Olá, {{costumer.firstName}}!</p>
       </div>
       <div class="header__configurations col-2">
         <a href="javascript:;" [routerLink]="['/settings']" routerLinkActive="active"><i class="pi pi-cog header__cog"></i></a>
@@ -22,14 +22,14 @@
       <div class="balance__checking-account col-5">
         <p class="balance__subtitle">Conta corrente</p>
         <div class="balance__value">
-          <p *ngIf="showBalance">{{checkingBalance}}</p>
+          <p *ngIf="showBalance">R$ {{balanceDetails?.checking_balance}}</p>
           <div class="balance__value--overshadow" *ngIf="!showBalance"></div>
         </div>
       </div>
       <div class="balance__savings-account col-7">
         <p class="balance__subtitle">Poupança</p>
         <div class="balance__value">
-          <p *ngIf="showBalance">{{savingsBalance}}</p>
+          <p *ngIf="showBalance">R$ {{balanceDetails?.savings_balance}}</p>
           <div class="balance__value--overshadow" *ngIf="!showBalance"></div>
         </div>
       </div>
@@ -83,15 +83,15 @@
           <div class="banks__item grid col-12" *ngFor="let bank of banks">
             <a class="grid col-12" href="javascript:;" (click)="selectBank(bank)">
               <div class="banks__logo col-4">
-                <img src={{bank.imgUrl}}>
+                <img src={{getImgUrl(bank)}}>
               </div>
               <div class="banks__balance col-8">
-                <p *ngIf="showBalance">{{bank.balance}}</p>
+                <p *ngIf="showBalance">R$ {{bank.balance}}</p>
                 <div class="banks__value--overshadow" *ngIf="!showBalance"></div>
                 <p>Saldo disponível</p>
               </div>
               <div class="banks__account-type col-12">
-                <p>{{bank.accountType}}</p>
+                <p>{{getAccountType(bank)}}</p>
               </div>
               <div class="banks__agency col-3">
                 <p>Agência</p>
@@ -99,7 +99,7 @@
               </div>
               <div class="banks__account col-9">
                 <p>Conta</p>
-                <p>{{bank.accountNumber}}</p>
+                <p>{{bank.account}}</p>
               </div>
             </a>
           </div>

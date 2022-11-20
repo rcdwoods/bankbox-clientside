@@ -25,14 +25,14 @@
         <div class="banks__item grid col-12" *ngFor="let bank of banks" [ngStyle]="getStyle(bank)">
           <a class="grid col-12" href="javascript:;" (click)="selectBank(bank)">
             <div class="banks__logo col-4">
-              <img src={{bank.imgUrl}}>
+              <img src={{getImgUrl(bank)}}>
             </div>
             <div class="banks__balance col-8">
               <p>{{bank.balance}}</p>
               <p>Saldo disponível</p>
             </div>
             <div class="banks__account-type col-12">
-              <p>{{bank.accountType}}</p>
+              <p>{{getAccountType(bank)}}</p>
             </div>
             <div class="banks__agency col-3">
               <p>Agência</p>
@@ -40,7 +40,7 @@
             </div>
             <div class="banks__account col-9">
               <p>Conta</p>
-              <p>{{bank.accountNumber}}</p>
+              <p>{{bank.account}}</p>
             </div>
           </a>
         </div>

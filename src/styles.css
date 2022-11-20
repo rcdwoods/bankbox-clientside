@@ -14,5 +14,6 @@
   font-family: 'Circular Std';
   color: #3d405b;
   text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 

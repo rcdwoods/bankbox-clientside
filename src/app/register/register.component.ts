@@ -38,4 +38,16 @@ export class RegisterComponent implements OnInit {
     return error.error.message
   }
 
+  validateIsNotNumber(event: KeyboardEvent) {
+    const pattern = /[0-9]/
+    if (pattern.test(event.key))
+      event.preventDefault()
+  }
+
+  validateIsNumber(event: KeyboardEvent) {
+    const pattern = /[0-9]/
+    if (!pattern.test(event.key))
+      event.preventDefault()
+  }
+
 }

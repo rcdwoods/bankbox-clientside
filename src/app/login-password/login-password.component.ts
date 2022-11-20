@@ -23,14 +23,15 @@ export class LoginPasswordComponent implements OnInit {
   getUserName() {
     this.costumerBasic = this.loginService.costumerBasic
     var costumerName = this.costumerBasic?.firstName
-    console.log(costumerName)
     if (costumerName == undefined) this.goToInitialPage()
     return costumerName
   }
 
   login(password: string) {
-    this.loginService.login(this.costumerBasic!!.cpf!!, password).subscribe(
+    const authData = btoa(this.costumerBasic!!.cpf!! + ':' + password)
+    this.loginService.login(authData).subscribe(
       (user) => {
+        user.authData = authData
         localStorage.setItem('auth', JSON.stringify(user))
         this.router.navigateByUrl('home')
       },

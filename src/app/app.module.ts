@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
+import { InputMaskModule } from 'primeng/inputmask';
 import { FormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { HttpClientModule } from '@angular/common/http';
@@ -37,6 +38,7 @@ import { BanksChooseComponent } from './banks-choose/banks-choose.component';
     AppRoutingModule,
     ButtonModule,
     InputTextModule,
+    InputMaskModule,
     FormsModule,
     PasswordModule,
     HttpClientModule,

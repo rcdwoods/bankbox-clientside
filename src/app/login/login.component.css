@@ -65,12 +65,26 @@
   display: inline;
 }
 
-.cpf input {
+.cpf .input {
   color: #252A31;
   font-size: 14px;
   background-color: transparent;
   margin-left: 20px;
   height: 40px;
+  border: none;
+}
+
+.cpf .input::ng-deep .p-inputtext {
+  color: #252A31;
+  font-size: 14px;
+  background-color: transparent;
+  margin-left: 0px;
+  height: 40px;
+  border: none;
+}
+
+.cpf .input::ng-deep .p-inputtext:focus {
+  box-shadow: none;
   border: none;
 }
 

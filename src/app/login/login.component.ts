@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
   preLogin(cpf: string) {
     this.loginService.preLogin(cpf).subscribe(
       (data) => {
-        console.log(data)
         this.loginService.costumerBasic = data
         this.goToPassword()
       },

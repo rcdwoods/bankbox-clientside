@@ -1,3 +1,5 @@
+import { Bank } from './../resources/models/Bank';
+import { BanksService } from './../resources/services/banks.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,35 +11,38 @@ export class BanksComponent implements OnInit {
 
   selectedBank = {};
   selectedOption = 'corrente';
-  banks = [
-    {
-      name: 'ITAU',
-      imgUrl: '../../assets/imgs/banks/itau.png',
-      color: '#EF761C',
-      accountType: 'Conta corrente',
-      agency: '0134',
-      accountNumber: '1242-3',
-      balance: 'R$ 13,24'
-    },
-    {
-      name: 'NUBANK',
-      imgUrl: '../../assets/imgs/banks/nubank.png',
-      color: '#781BC9',
-      accountType: 'Conta poupança',
-      agency: '1759',
-      accountNumber: '8255-7',
-      balance: 'R$ 100,00'
-    }
-  ]
+  banks: Bank[] = []
 
-  constructor() { }
+  constructor(private banksService: BanksService) { }
 
   ngOnInit(): void {
+    this.banksService.getBanks().subscribe(
+      (data) => {
+        console.log(data)
+        this.banks = data
+      },
+      (erro) => console.log('Erro ao obter bancos')
+    )
+  }
+
+  getBankColor(bank: Bank) {
+    if (bank.bank_name === 'ITAU') return '#EF761C'
+    else return '#781BC9'
+  }
+
+  getImgUrl(bank: Bank) {
+    if (bank.bank_name === 'ITAU') return '../../assets/imgs/banks/itau.png'
+    else return '../../assets/imgs/banks/nubank.png'
+  }
+
+  getAccountType(bank: Bank) {
+    if (bank.bank_account_type === 'CHECKING') return 'Conta corrente'
+    else return 'Conta poupança'
   }
 
   getStyle(bank: any) {
     let styles = {
-      'background-color': bank.color
+      'background-color': this.getBankColor(bank)
     }
     return styles
   }
@@ -47,7 +52,6 @@ export class BanksComponent implements OnInit {
   }
 
   selectBank(bank: any) {
-    console.log(this.banks)
     let index = this.banks.indexOf(bank)
     let lastValue = this.banks[this.banks.length - 1]
     this.banks[index] = lastValue

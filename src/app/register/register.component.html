@@ -9,24 +9,24 @@
     <div class="form grid col-12">
       <div class="form__text col-3"><p>Nome</p></div>
       <div class="form__input col-9">
-          <input pInputText type="text" [(ngModel)]="name">
+          <input pInputText type="text" [(ngModel)]="name" pattern="[a-zA-Z]" (keypress)="validateIsNotNumber($event)">
       </div>
     </div>
     <div class="form grid col-12">
       <div class="form__text col-3"><p>CPF</p></div>
-      <div class="form__input col-9">
-        <input pInputText type="text" [(ngModel)]="cpf" maxlength="14">
+      <div class="form__input form__cpf col-9">
+        <p-inputMask class="input" pInputText type="text" mask="999.999.999-99" [(ngModel)]="cpf"></p-inputMask>
       </div>
     </div>
     <div class="form grid col-12">
       <div class="form__text col-3"><p>Senha</p></div>
       <div class="form__input col-9">
-        <input pInputText type="password" [(ngModel)]="password" maxlength="6">
+        <input pInputText type="password" [(ngModel)]="password" maxlength="6" (keypress)="validateIsNumber($event)">
       </div>
     </div>
     <button class="button__login col-12" pButton label="Avançar" [ngClass]="{
       'button__login--filled' : name.length > 3 && cpf.length > 4 && password.length == 6
-   }" [disabled]="password.length != 6" (click)="register(name, cpf, password)"></button>
+   }" [disabled]="name.length < 3 || cpf.length < 11 || password.length != 6" (click)="register(name, cpf, password)"></button>
     <button class="button__register col-12" pButton label="Voltar" [routerLink]="['/']" routerLinkActive="active" ></button>
   </div>
 </div>
