@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class BanksComponent implements OnInit {
 
   selectedBank = {};
-  selectedOption = 'corrente';
+  selectedOption = 'CHECKING';
   banks: BankAccount[] = []
 
   constructor(private banksService: BanksService) { }
@@ -34,5 +34,9 @@ export class BanksComponent implements OnInit {
     let lastValue = this.banks[this.banks.length - 1]
     this.banks[index] = lastValue
     this.banks[this.banks.length - 1] = bank
+  }
+
+  getBanksByAccountType() {
+    return this.banks.filter(bank => bank.bank_account_type == this.selectedOption)
   }
 }

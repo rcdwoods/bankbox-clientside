@@ -8,13 +8,13 @@
     </div>
     <div class="menu grid col-12">
       <div class="menu__options grid col-10">
-        <a class="col-6" href="javascript:;" (click)="selectOption('corrente')">
-          <menu class="menu__option col-12" [ngClass]="{'menu__option--selected ': selectedOption == 'corrente'}">
+        <a class="col-6" href="javascript:;" (click)="selectOption('CHECKING')">
+          <menu class="menu__option col-12" [ngClass]="{'menu__option--selected ': selectedOption == 'CHECKING'}">
             <p>Corrente</p>
           </menu>
         </a>
-        <a class="col-6" href="javascript:;" (click)="selectOption('poupanca')">
-          <menu class="menu__option col-12" [ngClass]="{'menu__option--selected ': selectedOption == 'poupanca'}">
+        <a class="col-6" href="javascript:;" (click)="selectOption('SAVINGS')">
+          <menu class="menu__option col-12" [ngClass]="{'menu__option--selected ': selectedOption == 'SAVINGS'}">
             <p>Poupança</p>
           </menu>
         </a>
@@ -22,7 +22,7 @@
     </div>
     <div class="banks grid col-12">
       <div class="banks__items grid col-12">
-        <div class="banks__item grid col-12" *ngFor="let bank of banks" [ngStyle]="bank.getStyle()">
+        <div class="banks__item grid col-12" *ngFor="let bank of getBanksByAccountType()" [ngStyle]="bank.getStyle()">
           <a class="grid col-12" href="javascript:;" (click)="selectBank(bank)">
             <div class="banks__logo col-4">
               <img src={{bank.bank?.img_url}}>
@@ -32,7 +32,7 @@
               <p>Saldo disponível</p>
             </div>
             <div class="banks__account-type col-12">
-              <p>Oiu</p>
+              <p>{{bank.getAccountType()}}</p>
             </div>
             <div class="banks__agency col-3">
               <p>Agência</p>
