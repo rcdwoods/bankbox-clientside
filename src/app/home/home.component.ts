@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
       (erro) => console.log('Erro ao obter bancos')
     )
     this.costumerService.getBalanceDetails().subscribe(
-      (data) => this.balanceDetails = data,
+      (data) => this.balanceDetails = Object.assign(new BalanceDetails(), data),
       (error) => console.log('Erro ao obter balance details')
       )
     if (!this.costumer) this.router.navigateByUrl('')

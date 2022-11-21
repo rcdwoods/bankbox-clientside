@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  height: 100vh;
+  background-color: #3658E1;
+}
+
+.container {
+  display: block;
+  max-height: 760px;
+  background-color: white;
+  border: 15px solid #252A31;
+  border-radius: 12px;
+  min-width: 400px;
+  max-width: 400px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.header {
+  padding-top: 40px;
+}
+
+.header__title {
+  padding-top: 40px;
+  max-width: 300px;
+}
+
+.header__title p {
+  font-size: 22px;
+}
+
+.header i {
+  font-size: 20px;
+}
+
+.header__subtitle {
+  padding-top: 20px;
+}
+
+.header__subtitle p {
+  font-size: 14px;
+  font-family: 'Circular Std Book';
+  color: #8EA3B7;
+}
+
+.header__subtitle span {
+  font-family: 'Circular Std Book';
+}
+
+.button {
+  padding-top: 40px;
+}
+
+.button__avancar {
+  height: 50px;
+  background-color: #8EA3B7;
+  border-color: #8EA3B7;
+  border-radius: 6px;
+}
+
+.button__avancar--filled {
+  height: 50px;
+  background-color: #3658E1 !important;
+  border-color: #3658E1;
+  border-radius: 6px;
+}
+
+.button__avancar--filled:hover {
+  height: 50px;
+  background-color: #2245d3 !important;
+  border-color: #3658E1;
+  border-radius: 6px;
+}
+
+.button__avancar::ng-deep .p-button-label {
+  color: white;
+}
+
+.info {
+  padding-top: 50px;
+}
+
+.info__title {
+  padding-top: 30px;
+}
+
+.info__arrow i {
+  padding-top: 30px;
+  float: right;
+  font-size: 24px;
+  color: #8EA3B7;
+}
+
+@media(max-width: 500px) {
+  .app {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    min-width: none;
+    max-width: none;
+  }
+
+  .container {
+    padding: 0;
+    margin: 0;
+    height: auto;
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    min-width: 0px;
+    max-width: none;
+  }
+}

@@ -48,6 +48,7 @@
 }
 
 .banks__item {
+  min-width: 160px !important;
   width: 160px !important;
   max-width: 160px !important;
 }
@@ -145,6 +146,21 @@
   font-size: 14px;
 }
 
+.value {
+  padding-top: 40px;
+}
+
+.value__title p {
+  font-size: 14px;
+  font-family: 'Circular Std Book';
+  color: #8EA3B7;
+}
+
+.value__total {
+  font-size: 20px;
+  padding-top: 10px;
+}
+
 .date {
   padding-top: 40px;
 }
@@ -193,7 +209,7 @@
   border-radius: 6px;
 }
 
-.button__avancarhover {
+.button__avancar:hover {
   background-color: #4c6ae2;
 }
 

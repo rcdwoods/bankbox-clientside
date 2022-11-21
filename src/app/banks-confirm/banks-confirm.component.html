@@ -1,0 +1,26 @@
+<div class="app grid col-12">
+  <div class="container grid col-12">
+    <div class="header grid col-12">
+      <a class="col-12" href="javascript:;" [routerLink]="['/choose-bank']" routerLinkActive="active"><i class="pi pi-arrow-left"></i></a>
+      <div class="header__title col-12">
+        <p>Compartilhe seus dados através do Open Banking</p>
+      </div>
+      <div class="header__subtitle col-12">
+        <p>Você pode pedir o cancelamento do compartilhamento de dados a qualquer momento em <span>Configurações > Meus compartilhamentos</span></p>
+      </div>
+    </div>
+    <div class="button col-12">
+      <button class="button__avancar button__avancar--filled col-12" pButton label="Compartilhar meus dados" (click)="addBank()"></button>
+    </div>
+    <div class="info grid col-12">
+      <div class="info__title grid col-10">
+        <p>O que é Open Banking?</p>
+      </div>
+      <div class="info__arrow col-2"><i class="pi pi-angle-right"></i></div>
+      <div class="info__title grid col-10">
+        <p>Dúvidas frequentes</p>
+      </div>
+      <div class="info__arrow col-2"><i class="pi pi-angle-right"></i></div>
+    </div>
+  </div>
+</div>

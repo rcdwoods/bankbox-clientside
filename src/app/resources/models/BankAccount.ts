@@ -23,6 +23,6 @@ export class BankAccount {
 
   getFormattedBalance(): string {
     let balance = new String(this.balance!!)
-    return `R$ ${balance!!.replace('.', ',')}`
+    return `${balance!!.replace('.', ',')}`
   }
 }

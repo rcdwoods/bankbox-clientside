@@ -14,12 +14,12 @@
     </div>
     <div class="options grid col-12">
       <a class="grid col-12" href="javascript:;">
-        <div class="options__item grid col-12" *ngFor="let bank of banks">
+        <div class="options__item grid col-12" *ngFor="let bank of banks" (click)="chooseBank(bank)">
           <div class="options__logo col-2">
-            <img src={{bank.imgUrl}}>
+            <img src={{bank.img_url}}>
           </div>
           <div class="options__name col-8">
-            <p>{{bank.name}}</p>
+            <p>{{bank.formatted_name}}</p>
           </div>
           <div class="options__arrow col-2">
             <i class="pi pi-angle-right"></i>

@@ -6,6 +6,16 @@ export class BalanceDetails {
 
   getFormattedTotalBalance() {
     let totalBalance = new String(this.total_balance)
-    return `R$ ${totalBalance.replace('.', ',')}`
+    return `${totalBalance.replace('.', ',')}`
+  }
+
+  getFormattedCheckingBalance() {
+    let checkingBalance = new String(this.checking_balance)
+    return `${checkingBalance.replace('.', ',')}`
+  }
+
+  getFormattedSavingsBalance() {
+    let savingsBalance = new String(this.savings_balance)
+    return `${savingsBalance.replace('.', ',')}`
   }
 }

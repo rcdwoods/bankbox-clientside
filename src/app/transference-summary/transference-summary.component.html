@@ -14,7 +14,7 @@
         <div class="banks__value grid col-12">
           <div class="form__text col-2"><p>R$</p></div>
           <div class="form__input col-10">
-            <input pInputText type="text" [(ngModel)]="transaction.value" maxlength="4" (keypress)="validateIsNumber($event)">
+            <input pInputText type="text" [(ngModel)]="transaction.value" (keypress)="validateIsNumber($event)">
           </div>
         </div>
       </div>
@@ -36,12 +36,22 @@
         <p>Conta {{beneficiary?.account}}</p>
       </div>
     </div>
-    <div class="date">
-      <div class="date__title">
-        <p>Data</p>
+    <div class="transference__date-value grid col-12">
+      <div class="date grid col-6">
+        <div class="date__title col-12">
+          <p>Data</p>
+        </div>
+        <div class="date__moment col-12">
+          <p>Agora</p>
+        </div>
       </div>
-      <div class="date__moment">
-        <p>Agora</p>
+      <div class="value grid col-6">
+        <div class="value__title col-12">
+          <p>Valor</p>
+        </div>
+        <div class="value__total col-12">
+          <p>R$ {{getTotal()}}</p>
+        </div>
       </div>
     </div>
     <div class="transference">

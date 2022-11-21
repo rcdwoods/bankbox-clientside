@@ -26,10 +26,11 @@ export class TransferenceValueComponent implements OnInit {
 
   getAvailableBalance() {
     let balances = this.banks.map(bank => Number(bank.balance))
-    return String(balances.reduce((acc, value) => acc + value))
+    return String(balances.reduce((acc, value) => acc + value)).replace('.', ',')
   }
 
   validateIsMoney(event: KeyboardEvent) {
+    console.log()
     console.log(Number(this.value?.replace(',', '.')))
     const pattern = /[0-9,]/
     if (!pattern.test(event.key))
@@ -39,8 +40,7 @@ export class TransferenceValueComponent implements OnInit {
   setValue() {
     let availableBalance = this.getAvailableBalance().replace(',', '.')
     let value = this.value.replace(',', '.')
-    console.log('available: ' + Number(availableBalance) + 'value: ' + Number(this.value))
-    if (Number(value) > Number(this.getAvailableBalance())) {
+    if (Number(value) > Number(availableBalance)) {
       this.toastrService.error('Saldo insuficiente :(')
     } else {
       this.transferenceService.setValue(this.value!!)

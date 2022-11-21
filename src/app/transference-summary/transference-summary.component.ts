@@ -34,13 +34,13 @@ export class TransferenceSummaryComponent implements OnInit {
        (error) => this.toastrService.error('Beneficiário não encontrado :(')
      )
      this.banks.forEach(bank => {
-       let remaining = this.remainingValue.replace(',', '.')
-       let valueFromAccount = Number(bank.balance!!) >= Number(remaining) ? remaining : bank.balance
+      console.log('remaining ' + this.remainingValue)
+       let valueFromAccount = Number(bank.balance!!) >= Number(this.remainingValue.replace('.','').replace(',', '.')) ? this.remainingValue.replace('.','').replace(',', '.') : bank.balance
        let transaction = new Transaction(bank.id!!, this.beneficiary?.id!!, "TRANSFERENCE", valueFromAccount)
        this.transactions.push(transaction)
-       console.log('remaining ' + remaining + ' e value account ' + Number(valueFromAccount))
-       console.log('REMAINING ' + this.formatter.format(Number(remaining) - Number(valueFromAccount)))
-       this.remainingValue = String(this.formatter.format(Number(remaining) - Number(valueFromAccount)))
+       console.log('remaining ' + this.remainingValue + ' e value account ' + Number(valueFromAccount))
+       console.log('REMAINING ' + this.formatter.format(Number(this.remainingValue.replace('.','').replace(',', '.')) - Number(valueFromAccount)))
+       this.remainingValue = String(this.formatter.format(Number(this.remainingValue.replace('.','').replace(',', '.')) - Number(valueFromAccount)))
      })
   }
 
@@ -52,6 +52,11 @@ export class TransferenceSummaryComponent implements OnInit {
 
   getBankName(transaction: Transaction): string {
     return this.banks.filter(bank => bank.id === transaction.source_id)[0].bank?.formatted_name!!
+  }
+
+  getTotal() {
+    console.log(this.transactions.map(it => Number(it.value)))
+    return this.formatter.format(this.transactions.map(it => Number(it.value)).reduce((acc, value) => Number(acc + value)))
   }
 
   doTransference() {

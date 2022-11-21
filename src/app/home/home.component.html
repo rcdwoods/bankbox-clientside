@@ -22,14 +22,14 @@
       <div class="balance__checking-account col-5">
         <p class="balance__subtitle">Conta corrente</p>
         <div class="balance__value">
-          <p *ngIf="showBalance">R$ {{balanceDetails?.checking_balance}}</p>
+          <p *ngIf="showBalance">R$ {{balanceDetails?.getFormattedCheckingBalance()}}</p>
           <div class="balance__value--overshadow" *ngIf="!showBalance"></div>
         </div>
       </div>
       <div class="balance__savings-account col-7">
         <p class="balance__subtitle">Poupança</p>
         <div class="balance__value">
-          <p *ngIf="showBalance">R$ {{balanceDetails?.savings_balance}}</p>
+          <p *ngIf="showBalance">R$ {{balanceDetails?.getFormattedSavingsBalance()}}</p>
           <div class="balance__value--overshadow" *ngIf="!showBalance"></div>
         </div>
       </div>
@@ -92,7 +92,7 @@
                 <img src={{bank.bank?.img_url}}>
               </div>
               <div class="banks__balance col-8">
-                <p *ngIf="showBalance">R$ {{bank.balance}}</p>
+                <p *ngIf="showBalance">R$ {{bank.getFormattedBalance()}}</p>
                 <div class="banks__value--overshadow" *ngIf="!showBalance"></div>
                 <p>Saldo disponível</p>
               </div>
