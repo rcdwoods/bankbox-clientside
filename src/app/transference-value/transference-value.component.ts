@@ -31,22 +31,17 @@ export class TransferenceValueComponent implements OnInit {
   }
 
   validateIsMoney(event: KeyboardEvent) {
-    console.log()
-    console.log(Number(this.value?.replace(',', '.')))
     const pattern = /[0-9,]/
     if (!pattern.test(event.key))
       event.preventDefault()
   }
 
   setValue() {
-    console.log(this.value)
     let availableBalance = this.getAvailableBalance().replace(',', '.')
     let value = this.value.replace(',', '.')
     if (Number(value) > Number(availableBalance)) {
-      console.log(this.value)
       this.toastrService.error('Saldo insuficiente :(')
     } else {
-      console.log('sucesso')
       this.transferenceService.setValue(this.value!!)
       this.router.navigateByUrl("transference-beneficiary", { skipLocationChange: true })
     }

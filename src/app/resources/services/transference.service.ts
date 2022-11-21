@@ -33,10 +33,10 @@ export class TransferenceService {
     this.transactionTotalValue = value
   }
 
-  getBeneficiary(agency: string, account: string): Observable<BankAccount[]> {
+  getBeneficiary(bank: string, agency: string, account: string): Observable<BankAccount[]> {
     const user = this.loginService.getUser()
     const headers = new HttpHeaders(({ Authorization: 'Basic ' + user.authData }))
-    return this.httpClient.get<BankAccount[]>(`https://api.bankbox.com.br/v1/bank_accounts?agency=${agency}&account=${account}`, { headers })
+    return this.httpClient.get<BankAccount[]>(`https://api.bankbox.com.br/v1/bank_accounts?bank=${bank}&agency=${agency}&account=${account}`, { headers })
   }
 
   doTransference(transactions: Transaction[]) {

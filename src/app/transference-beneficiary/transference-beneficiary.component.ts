@@ -21,7 +21,7 @@ export class TransferenceBeneficiaryComponent implements OnInit {
     {name: 'Nubank', code: 'NUBANK'},
     {name: 'Santander', code: 'SANTANDER'}
   ]
-  selectedBank = []
+  selectedBank: {name: string, code: string}[] = []
 
   constructor(private router: Router, private transferenceService: TransferenceService, private toastrService: ToastrService) { }
 
@@ -31,14 +31,13 @@ export class TransferenceBeneficiaryComponent implements OnInit {
   }
 
   validateIsNumber(event: KeyboardEvent) {
-    console.log(Number(this.value?.replace(',', '.')))
     const pattern = /[0-9,]/
     if (!pattern.test(event.key))
       event.preventDefault()
   }
 
   setBeneficiary() {
-    this.transferenceService.getBeneficiary(this.agency!!, this.account!!).subscribe(
+    this.transferenceService.getBeneficiary(this.selectedBank[0].code, this.agency!!, this.account!!).subscribe(
       (data) => {
         this.transferenceService.beneficiary = Object.assign(new BankAccount(), data[0])
         this.router.navigateByUrl('transference-summary', { skipLocationChange: true })

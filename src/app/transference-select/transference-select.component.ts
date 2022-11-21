@@ -26,7 +26,6 @@ export class TransferenceSelectComponent implements OnInit {
   ngOnInit(): void {
     this.banksService.getBanks().subscribe(
       (data) => {
-        console.log(data)
         this.banks = data.map(bank => Object.assign(new BankAccount(), bank))
       },
       (erro) => console.log('Erro ao obter bancos')

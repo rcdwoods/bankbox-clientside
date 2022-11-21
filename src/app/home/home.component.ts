@@ -42,7 +42,6 @@ export class HomeComponent implements OnInit {
     this.costumer = JSON.parse(localStorage.getItem('auth')!!) as Costumer
     this.banksService.getBanks().subscribe(
       (data) => {
-        console.log(data)
         this.banks = data.map(bank => Object.assign(new BankAccount(), bank))
       },
       (erro) => console.log('Erro ao obter bancos')
