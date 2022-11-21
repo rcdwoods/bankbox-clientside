@@ -12,6 +12,7 @@ import { Router } from '@angular/router'
 })
 export class TransferenceValueComponent implements OnInit {
 
+  formatter = new Intl.NumberFormat('pt-BR')
   transactions: Transaction[] = []
   banks: BankAccount[] = []
   value: string = ""
@@ -26,7 +27,7 @@ export class TransferenceValueComponent implements OnInit {
 
   getAvailableBalance() {
     let balances = this.banks.map(bank => Number(bank.balance))
-    return String(balances.reduce((acc, value) => acc + value)).replace('.', ',')
+    return String(balances.reduce((acc, value) => Number(this.formatter.format(acc + value).replace('.', '').replace(',', '.')))).replace('.', ',')
   }
 
   validateIsMoney(event: KeyboardEvent) {

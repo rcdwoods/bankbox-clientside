@@ -68,15 +68,16 @@
 }
 
 .options {
-  padding-top: 40px;
+  padding-top: 30px;
 }
 
 .options__item {
-  padding-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-.options__item:first-of-type {
-  padding-top: 0;
+.options__item:hover {
+  background-color: #f1f1f1;;
 }
 
 .options__name {
@@ -85,7 +86,7 @@
 }
 
 .options__arrow i {
-  padding-top: 10px;
+  padding-top: 15px;
   float: right;
   font-size: 24px;
   color: #8EA3B7;

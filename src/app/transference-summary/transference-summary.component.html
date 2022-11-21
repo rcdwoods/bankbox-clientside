@@ -63,7 +63,7 @@
       </div>
     </div>
     <div class="button col-12">
-      <button class="button__avancar button__avancar--filled col-12" pButton label="Avançar" (click)="doTransference()"></button>
+      <button class="button__avancar button__avancar--filled col-12" pButton label="Avançar" [disabled]="transactionTotalValue >= getTotal()" (click)="doTransference()"></button>
     </div>
   </div>
 </div>

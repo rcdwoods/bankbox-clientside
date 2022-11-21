@@ -73,6 +73,7 @@
 }
 
 .form__input input {
+  box-shadow: none;
   width: 100%;
   height: 40px;
   color: #252A31;

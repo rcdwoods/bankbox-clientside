@@ -53,6 +53,6 @@ export class TransferenceSelectComponent implements OnInit {
     if ( this.banks.length == 0) return ''
     if (this.banks.length == 1) return this.banks[0].bank?.formatted_name
     let formattedNames = new String(this.banks.map(bank => bank.bank?.formatted_name))
-    return formattedNames.replace(',', ', ')
+    return formattedNames.split(',').join(', ')
   }
 }
