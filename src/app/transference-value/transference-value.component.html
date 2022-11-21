@@ -1,0 +1,25 @@
+<div class="app grid col-12">
+  <div class="container grid col-12">
+    <div class="header grid col-12">
+      <a class="col-12" href="javascript:;" [routerLink]="['/transference']" routerLinkActive="active"><i class="pi pi-arrow-left"></i></a>
+      <div class="header__title col-12">
+        <p>Qual é o valor da sua transferência?</p>
+      </div>
+      <div class="header__subtitle col-12">
+        <p>Saldo disponível: R$ {{getAvailableBalance()}}</p>
+      </div>
+    </div>
+    <div class="form grid col-12">
+      <div class="form__text col-2"><p>R$</p></div>
+      <div class="form__input col-10">
+        <input pInputText type="text" [(ngModel)]="value" placeholder="0,00" (keypress)="validateIsMoney($event)">
+      </div>
+    </div>
+    <div class="info">
+      <p>Você está utilizando o saldo do(s) banco(s) </p>
+    </div>
+    <div class="button">
+      <button class="button__avancar col-12" pButton label="Avançar" [ngClass]="{'button__avancar--filled' : isValueValid()}" [disabled]="!isValueValid()" (click)="setValue()"></button>
+    </div>
+  </div>
+</div>

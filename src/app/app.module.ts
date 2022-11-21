@@ -19,6 +19,11 @@ import { HomeComponent } from './home/home.component';
 import { SettingsComponent } from './settings/settings.component';
 import { BanksComponent } from './banks/banks.component';
 import { BanksChooseComponent } from './banks-choose/banks-choose.component';
+import { TransferenceSelectComponent } from './transference-select/transference-select.component';
+import { TransferenceValueComponent } from './transference-value/transference-value.component';
+import { TransferenceBeneficiaryComponent } from './transference-beneficiary/transference-beneficiary.component';
+import {MultiSelectModule} from 'primeng/multiselect';
+import { TransferenceSummaryComponent } from './transference-summary/transference-summary.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,11 @@ import { BanksChooseComponent } from './banks-choose/banks-choose.component';
     HomeComponent,
     SettingsComponent,
     BanksComponent,
-    BanksChooseComponent
+    BanksChooseComponent,
+    TransferenceSelectComponent,
+    TransferenceValueComponent,
+    TransferenceBeneficiaryComponent,
+    TransferenceSummaryComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -42,6 +51,7 @@ import { BanksChooseComponent } from './banks-choose/banks-choose.component';
     FormsModule,
     PasswordModule,
     HttpClientModule,
+    MultiSelectModule,
     ToastrModule.forRoot()
   ],
   providers: [],

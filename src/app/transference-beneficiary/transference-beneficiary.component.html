@@ -1,0 +1,33 @@
+<div class="app grid col-12">
+  <div class="container grid col-12">
+    <div class="header grid col-12">
+      <a class="col-12" href="javascript:;" [routerLink]="['/transference-value']" routerLinkActive="active"><i class="pi pi-arrow-left"></i></a>
+      <div class="header__title col-12">
+        <p>Para quem você quer transferir R$ {{value}}?</p>
+      </div>
+    </div>
+    <div class="forms grid col-12">
+      <div class="form grid col-12">
+        <div class="form__text col-3"><p>Banco</p></div>
+        <p-multiSelect class="form__input col-9" [selectionLimit]="1" [options]="banks" [(ngModel)]="selectedBank" optionLabel="name"></p-multiSelect>
+      </div>
+      <div class="form grid col-12">
+        <div class="form__text col-3"><p>Agência</p></div>
+        <div class="form__input col-9">
+          <input pInputText type="text" [(ngModel)]="agency" maxlength="4" (keypress)="validateIsNumber($event)">
+        </div>
+      </div>
+      <div class="form grid col-12">
+        <div class="form__text col-3"><p>Conta</p></div>
+        <div class="form__input">
+          <p-inputMask class="input" pInputText type="text" mask="99999-9" [(ngModel)]="account"></p-inputMask>
+        </div>
+      </div>
+    </div>
+    <div class="button col-12">
+      <button class="button__avancar col-12" pButton label="Avançar"
+        [ngClass]="{'button__avancar--filled' : account.length === 7 && selectedBank.length === 1 && agency!!.length === 4}"
+        [disabled]="account!!.length != 7 || selectedBank.length != 1 || agency!!.length != 4" (click)="setBeneficiary()"></button>
+    </div>
+  </div>
+</div>

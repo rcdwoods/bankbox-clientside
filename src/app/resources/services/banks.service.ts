@@ -13,7 +13,6 @@ export class BanksService {
 
   public getBanks(): Observable<BankAccount[]> {
     const user = this.loginService.getUser()
-    console.log('User id: ' + user.id)
     const headers = new HttpHeaders(({ Authorization: 'Basic ' + user.authData }))
     return this.httpClient.get<BankAccount[]>(`https://api.bankbox.com.br/v1/bank_accounts?user_id=${user.id}`, { headers })
   }

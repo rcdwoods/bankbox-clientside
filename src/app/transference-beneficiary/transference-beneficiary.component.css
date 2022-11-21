@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  height: 100vh;
+  background-color: #3658E1;
+}
+
+.container {
+  display: block;
+  max-height: 760px;
+  background-color: white;
+  border: 15px solid #252A31;
+  border-radius: 12px;
+  min-width: 400px;
+  max-width: 400px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.header {
+  padding-top: 40px;
+}
+
+.header__title {
+  padding-top: 40px;
+  max-width: 300px;
+}
+
+.header__title p {
+  font-size: 22px;
+}
+
+.forms {
+  padding-top: 25px;
+}
+
+.form {
+  display: block;
+  border-radius: 8px;
+  background-color: #EFF2F5;
+  margin-bottom: 20px;
+}
+
+.form__text {
+  display: inline-block;
+  padding-left: 0px;
+}
+
+.form__text p {
+  display: inline-block;
+  font-size: 14px;
+  color: #697D95;
+  padding-left: 15px;
+}
+
+.form__input {
+  display: inline-block;
+}
+
+.form__input input {
+  width: 100%;
+  height: 40px;
+  color: #252A31;
+  font-size: 14px;
+  background-color: transparent;
+  border: none;
+}
+
+.form__input .input {
+  width: 100%;
+}
+
+.form__input::ng-deep .p-multiselect {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+}
+
+.form__input::ng-deep .p-multiselect-label-container {
+  height: 100%;
+  padding-left: 0
+}
+
+.form__input .input::ng-deep .p-inputtext {
+  padding: 0;
+  width: 100%;
+  height: 40px;
+  color: #252A31;
+  font-size: 14px;
+  background-color: transparent;
+  border: none;
+}
+
+.form__input .input::ng-deep .p-inputtext:focus {
+  box-shadow: none;
+}
+
+.form {
+  border-radius: 8px;
+  background-color: #EFF2F5;
+  display: block;
+  margin-bottom: 20px;
+  height: 40px;
+}
+
+.form p {
+  font-size: 14px;
+  color: #697D95;
+  padding-left: 15px;
+  display: inline;
+}
+
+.form .input {
+  color: #252A31;
+  font-size: 14px;
+  background-color: transparent;
+  height: 40px;
+  border: none;
+}
+
+.form .input::ng-deep .p-inputtext {
+  padding: 0;
+  color: #252A31;
+  font-size: 14px;
+  background-color: transparent;
+  margin-left: 0px;
+  height: 40px;
+  border: none;
+}
+
+.form .input::ng-deep .p-inputtext:focus {
+  box-shadow: none;
+  border: none;
+}
+
+.button {
+  padding-top: 40px;
+}
+
+.button__avancar {
+  height: 50px;
+  background-color: #8EA3B7;
+  border-color: #8EA3B7;
+  border-radius: 6px;
+}
+
+.button__avancar--filled {
+  height: 50px;
+  background-color: #3658E1 !important;
+  border-color: #3658E1;
+  border-radius: 6px;
+}
+
+.button__avancarhover {
+  background-color: #4c6ae2;
+}
+
+.button__avancar::ng-deep .p-button-label {
+  color: white;
+}
+
+@media(max-width: 500px) {
+  .app {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    min-width: none;
+    max-width: none;
+  }
+
+  .container {
+    padding: 0;
+    margin: 0;
+    height: auto;
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    min-width: 0px;
+    max-width: none;
+  }
+}

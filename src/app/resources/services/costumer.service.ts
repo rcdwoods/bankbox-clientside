@@ -17,4 +17,11 @@ export class CostumerService {
     const headers = new HttpHeaders(({ Authorization: 'Basic ' + user.authData }))
     return this.httpClient.get<BalanceDetails>(`https://api.bankbox.com.br/v1/costumers/${user.id}/balance`, { headers })
   }
+
+  public getCostumer(costumerId: Number): Observable<Costumer> {
+    const user = this.loginService.getUser()
+    const headers = new HttpHeaders(({ Authorization: 'Basic ' + user.authData }))
+    return this.httpClient.get<Costumer>(`https://api.bankbox.com.br/v1/costumers/${costumerId}`, { headers })
+
+  }
 }

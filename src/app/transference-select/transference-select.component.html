@@ -1,0 +1,69 @@
+<div class="app grid col-12">
+  <div class="container grid col-12">
+    <div class="header grid col-12">
+      <a class="col-12" href="javascript:;" [routerLink]="['/home']" routerLinkActive="active"><i class="pi pi-arrow-left"></i></a>
+      <div class="header__title col-12">
+        <p>Quer usar o saldo de qual conta?</p>
+      </div>
+    </div>
+    <div class="search col-12">
+      <span class="search__input p-input-icon-right">
+          <i class="pi pi-search"></i>
+          <input type="text" placeholder="Pesquisar banco" pInputText>
+      </span>
+    </div>
+    <div class="accounts grid col-12">
+      <div class="accounts__checking grid col-12">
+        <div class="accounts__title col-12">
+          <p>Corrente</p>
+        </div>
+        <div class="accounts__item grid col-12" *ngFor="let bank of getBanksByAccountType('CHECKING')">
+          <a class="grid col-12" href="javascript:;" (click)="initTransaction([bank])">
+            <div class="accounts__logo col-2">
+              <img src={{bank.bank?.img_url}}>
+            </div>
+            <div class="accounts__info col-9">
+              <p>{{bank.bank?.formatted_name}}</p>
+              <p class="accounts__balance">{{bank.getFormattedBalance()}}</p>
+            </div>
+            <div class="accounts__button col-1"><i class="pi pi-angle-right"></i></div>
+          </a>
+        </div>
+      </div>
+      <div class="accounts__savings grid col-12">
+        <div class="accounts__title col-12">
+          <p>Poupança</p>
+        </div>
+        <div class="accounts__item grid col-12" *ngFor="let bank of getBanksByAccountType('SAVINGS')">
+          <a class="grid col-12" href="javascript:;" (click)="initTransaction([bank])">
+            <div class="accounts__logo col-2">
+              <img src={{bank.bank?.img_url}}>
+            </div>
+            <div class="accounts__info col-9">
+              <p>{{bank.bank?.formatted_name}}</p>
+              <p class="accounts__balance">{{bank.getFormattedBalance()}}</p>
+            </div>
+            <div class="accounts__button col-1"><i class="pi pi-angle-right"></i></div>
+          </a>
+        </div>
+      </div>
+      <div class="accounts__all grid col-12">
+        <div class="accounts__title col-12">
+          <p>Todas contas</p>
+        </div>
+        <div class="accounts__item grid col-12">
+          <a class="grid col-12" href="javascript:;" (click)="initTransaction(banks)">
+            <div class="accounts__logo--unified col-2">
+              <img src={{bank.bank?.img_url}} *ngFor="let bank of banks">
+            </div>
+            <div class="accounts__info col-9">
+              <p>{{getBankNames()}}</p>
+              <p class="accounts__balance">{{balanceDetails.getFormattedTotalBalance()}}</p>
+            </div>
+            <div class="accounts__button col-1"><i class="pi pi-angle-right"></i></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

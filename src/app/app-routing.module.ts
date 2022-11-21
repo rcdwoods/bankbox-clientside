@@ -1,3 +1,7 @@
+import { TransferenceSummaryComponent } from './transference-summary/transference-summary.component';
+import { TransferenceBeneficiaryComponent } from './transference-beneficiary/transference-beneficiary.component';
+import { TransferenceValueComponent } from './transference-value/transference-value.component';
+import { TransferenceSelectComponent } from './transference-select/transference-select.component';
 import { BanksChooseComponent } from './banks-choose/banks-choose.component';
 import { BanksComponent } from './banks/banks.component';
 import { SettingsComponent } from './settings/settings.component';
@@ -17,7 +21,11 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'banks', component: BanksComponent },
-  { path: 'choose-bank', component: BanksChooseComponent }
+  { path: 'choose-bank', component: BanksChooseComponent },
+  { path: 'transference', component: TransferenceSelectComponent },
+  { path: 'transference-value', component: TransferenceValueComponent },
+  { path: 'transference-beneficiary', component: TransferenceBeneficiaryComponent },
+  { path: 'transference-summary', component: TransferenceSummaryComponent }
 ];
 
 @NgModule({

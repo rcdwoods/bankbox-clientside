@@ -20,4 +20,9 @@ export class BankAccount {
     }
     return styles
   }
+
+  getFormattedBalance(): string {
+    let balance = new String(this.balance!!)
+    return `R$ ${balance!!.replace('.', ',')}`
+  }
 }

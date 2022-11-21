@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  height: 100vh;
+  background-color: #3658E1;
+}
+
+.container {
+  display: block;
+  max-height: 760px;
+  background-color: white;
+  border: 15px solid #252A31;
+  border-radius: 12px;
+  min-width: 400px;
+  max-width: 400px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.header {
+  padding-top: 40px;
+}
+
+.header__title {
+  padding-top: 40px;
+  max-width: 300px;
+}
+
+.header__title p {
+  font-size: 22px;
+}
+
+.banks::-webkit-scrollbar {
+  width: 0;
+}
+
+.banks {
+  min-width: 120px;
+  overflow-x: auto;
+  display: flex !important;
+  padding-top: 20px;
+}
+
+.banks__item {
+  width: 160px !important;
+  max-width: 160px !important;
+}
+
+.banks__name p {
+  font-family: 'Circular Std Book';
+  color: #8EA3B7;
+}
+
+.banks__value {
+  padding-top: 10px;
+}
+
+.banks__value p {
+  color: #3658E1;
+  font-size: 22px;
+}
+
+.form__input {
+  display: inline-block;
+}
+
+.form__input input {
+  box-shadow: none;
+  padding-left: 8px;
+  font-family: 'Circular Std';
+  width: 100%;
+  height: 27px;
+  color: #3658E1;
+  font-size: 22px;
+  background-color: transparent;
+  border: none;
+}
+
+.form__input .input {
+  width: 100%;
+}
+
+.form__input .input::ng-deep .p-inputtext {
+  padding: 0;
+  width: 100%;
+  height: 30px;
+  font-size: 22px;
+  background-color: transparent;
+  border: none;
+}
+
+.form__input .input::ng-deep .p-inputtext:focus {
+  box-shadow: none;
+}
+
+.beneficiary {
+  padding-top: 20px;
+}
+
+.beneficiary__title p {
+  font-family: 'Circular Std Book';
+  font-size: 14px;
+  color: #8EA3B7;
+}
+
+.beneficiary__name {
+  padding-top: 3px;
+}
+
+.beneficiary__name p {
+  font-size: 22px;;
+  color: #3658E1;
+}
+
+.beneficiary__bank {
+  padding-top: 10px;
+}
+
+.beneficiary__bank p {
+  font-family: 'Circular Std Book';
+  font-size: 14px;
+}
+
+.beneficiary__agency {
+  padding-top: 5px;
+}
+
+.beneficiary__agency p {
+  font-family: 'Circular Std Book';
+  font-size: 14px;
+}
+
+.beneficiary__account {
+  padding-top: 5px;
+}
+
+.beneficiary__account p {
+  font-family: 'Circular Std Book';
+  font-size: 14px;
+}
+
+.date {
+  padding-top: 40px;
+}
+
+.date__title p {
+  font-size: 14px;
+  font-family: 'Circular Std Book';
+  color: #8EA3B7;
+}
+
+.date__moment {
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+.transference {
+  padding-top: 40px;
+}
+
+.transference__title p {
+  font-size: 14px;
+  font-family: 'Circular Std Book';
+  color: #8EA3B7;
+}
+
+.transference__type {
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+.button {
+  padding-top: 40px;
+}
+
+.button__avancar {
+  height: 50px;
+  background-color: #8EA3B7;
+  border-color: #8EA3B7;
+  border-radius: 6px;
+}
+
+.button__avancar--filled {
+  height: 50px;
+  background-color: #3658E1 !important;
+  border-color: #3658E1;
+  border-radius: 6px;
+}
+
+.button__avancarhover {
+  background-color: #4c6ae2;
+}
+
+.button__avancar::ng-deep .p-button-label {
+  color: white;
+}
+
+
+@media(max-width: 500px) {
+  .app {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    min-width: none;
+    max-width: none;
+  }
+
+  .container {
+    padding: 0;
+    margin: 0;
+    height: auto;
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    min-width: 0px;
+    max-width: none;
+  }
+}
