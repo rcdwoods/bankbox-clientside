@@ -39,11 +39,14 @@ export class TransferenceValueComponent implements OnInit {
   }
 
   setValue() {
+    console.log(this.value)
     let availableBalance = this.getAvailableBalance().replace(',', '.')
     let value = this.value.replace(',', '.')
     if (Number(value) > Number(availableBalance)) {
+      console.log(this.value)
       this.toastrService.error('Saldo insuficiente :(')
     } else {
+      console.log('sucesso')
       this.transferenceService.setValue(this.value!!)
       this.router.navigateByUrl("transference-beneficiary", { skipLocationChange: true })
     }

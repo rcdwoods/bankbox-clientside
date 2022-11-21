@@ -12,9 +12,9 @@
           <p>De {{getBankName(transaction)}}</p>
         </div>
         <div class="banks__value grid col-12">
-          <div class="form__text col-2"><p>R$</p></div>
+          <div class="form__text col-2"><p [ngClass]="{'form__text--disabled': sourceIsBeneficiary(transaction)}">R$</p></div>
           <div class="form__input col-10">
-            <input pInputText type="text" [(ngModel)]="transaction.value" (keypress)="validateIsNumber($event)">
+            <input pInputText type="text" [(ngModel)]="transaction.value" [disabled]="sourceIsBeneficiary(transaction)" (keypress)="validateIsNumber($event)">
           </div>
         </div>
       </div>
@@ -63,7 +63,7 @@
       </div>
     </div>
     <div class="button col-12">
-      <button class="button__avancar button__avancar--filled col-12" pButton label="Avançar" [disabled]="transactionTotalValue >= getTotal()" (click)="doTransference()"></button>
+      <button class="button__avancar button__avancar--filled col-12" pButton label="Avançar" [disabled]="!transferedValueIsCorrect()" (click)="doTransference()"></button>
     </div>
   </div>
 </div>

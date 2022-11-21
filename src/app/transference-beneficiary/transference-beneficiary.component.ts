@@ -27,7 +27,7 @@ export class TransferenceBeneficiaryComponent implements OnInit {
 
   ngOnInit(): void {
     this.value = this.transferenceService.transactionTotalValue
-    if (this.value == '1') this.router.navigateByUrl('transference')
+    if (this.value == '0') this.router.navigateByUrl('transference')
   }
 
   validateIsNumber(event: KeyboardEvent) {

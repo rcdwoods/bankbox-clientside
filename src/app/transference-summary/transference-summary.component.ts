@@ -14,6 +14,7 @@ import { Transaction } from '../resources/models/Transaction';
 })
 export class TransferenceSummaryComponent implements OnInit {
 
+  balance = '0'
   formatter = new Intl.NumberFormat('pt-BR')
   remainingValue: string = ''
   transactionTotalValue: string = ''
@@ -36,7 +37,8 @@ export class TransferenceSummaryComponent implements OnInit {
      this.banks.forEach(bank => {
       console.log('remaining ' + this.remainingValue)
        let valueFromAccount = Number(bank.balance!!) >= Number(this.remainingValue.replace('.','').replace(',', '.')) ? this.remainingValue.replace('.','').replace(',', '.') : bank.balance
-       let transaction = new Transaction(bank.id!!, this.beneficiary?.id!!, "TRANSFERENCE", valueFromAccount)
+       if (bank.id === this.beneficiary!!.id) valueFromAccount = '0'
+       let transaction = new Transaction(bank.id!!, this.beneficiary?.id!!, "TRANSFERENCE", new String(valueFromAccount)?.replace('.', ','))
        this.transactions.push(transaction)
        console.log('remaining ' + this.remainingValue + ' e value account ' + Number(valueFromAccount))
        console.log('REMAINING ' + this.formatter.format(Number(this.remainingValue.replace('.','').replace(',', '.')) - Number(valueFromAccount)))
@@ -56,16 +58,28 @@ export class TransferenceSummaryComponent implements OnInit {
 
   getTotal() {
     console.log(this.transactions.map(it => Number(it.value)))
-    return this.formatter.format(this.transactions.map(it => Number(it.value)).reduce((acc, value) => Number(acc + value)))
+    return this.formatter.format(this.transactions.map(it => Number(it.value?.replace(',', '.'))).reduce((acc, value) => Number(acc + value)))
+  }
+
+  transferedValueIsCorrect() {
+    console.log('total: ' + this.getTotal().replace('.', '').replace(',', '.') + ' transaction: ' + Number(this.transactionTotalValue.replace('.', '').replace(',', '.')))
+    return Number(this.getTotal().replace('.', '').replace(',', '.')) === Number(this.transactionTotalValue.replace('.', '').replace(',', '.'))
   }
 
   doTransference() {
-    this.transferenceService.doTransference(this.transactions).subscribe(
+    let validTransactions: Transaction[] = this.transactions
+      .filter(it => it.value != '0')
+      .map(it => {it.value = it.value?.replace(',', '.'); return it})
+    this.transferenceService.doTransference(validTransactions).subscribe(
       (data) => {
         this.router.navigateByUrl('')
         this.toastrService.success('Transferência realizada!')
       },
       (error) => this.toastrService.error('Transferência não realizada :(')
     )
+  }
+
+  sourceIsBeneficiary(transaction: Transaction) {
+    return transaction.source_id === transaction.beneficiary_id
   }
 }

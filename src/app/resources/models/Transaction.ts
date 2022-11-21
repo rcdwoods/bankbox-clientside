@@ -10,4 +10,8 @@ export class Transaction {
     this.type = type
     this.value = value
   }
+
+  public getValueFormatted() {
+    return this.value?.replace('.', ',')
+  }
 }
