@@ -34,7 +34,8 @@ export class RegisterComponent implements OnInit {
   }
 
   errorMessage(error: any): string {
-    if (error.error.code == 'USER_ALREADY_EXISTS') return 'Esse usuário já existe!'
+    console.log(error)
+    if (error.error.code == 'COSTUMER_ALREADY_EXISTS') return 'Esse usuário já existe!'
     return error.error.message
   }
 
