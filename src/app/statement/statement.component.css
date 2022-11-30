@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  height: 100vh;
+  background-color: #3658E1;
+}
+
+.container {
+  overflow-y: scroll;
+  display: block;
+  max-height: 760px;
+  background-color: white;
+  border: 15px solid #252A31;
+  border-radius: 12px;
+  min-width: 400px;
+  max-width: 400px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.header {
+  padding-top: 40px;
+}
+
+.header__title {
+  padding-top: 40px;
+  max-width: 200px;
+}
+
+.header__title p {
+  font-size: 22px;
+}
+
+.header i {
+  font-size: 20px;
+}
+
+.selections {
+  padding-top: 20px;
+}
+
+.selections__title p {
+  font-size: 14px;
+  font-family: 'Circular Std Book';
+  color: #697D95;
+}
+
+.form__input::ng-deep .p-multiselect {
+  margin-top: 5px;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+}
+
+.form__input::ng-deep .p-multiselect-label-container {
+  height: 100%;
+  padding-left: 0
+}
+
+.form__input::ng-deep .p-multiselect-label {
+  padding: 0;
+}
+
+.balance {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 20px;
+  background-color: #EFF2F5;
+  border-radius: 6px;
+}
+
+.balance p {
+  text-align: center;
+}
+
+.balance__title p {
+  font-family: 'Circular Std Book';
+  color: #697D95;
+  font-size: 14px;
+}
+
+.balance__value p {
+  font-family: 'Circular Std Book';
+  font-size: 20px;
+}
+
+.statements {
+  padding-top: 30px;
+}
+
+.statements__date p {
+  font-size: 14px;
+  color: #697D95;
+}
+
+.statements__date span {
+  padding-left: 5px;
+  font-size: 18px !important;
+}
+
+@media(max-width: 500px) {
+  .app {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    min-width: none;
+    max-width: none;
+  }
+
+  .container {
+    padding: 0;
+    margin: 0;
+    height: auto;
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    min-width: 0px;
+    max-width: none;
+  }
+}

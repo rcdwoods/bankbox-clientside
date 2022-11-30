@@ -25,6 +25,7 @@ import { TransferenceBeneficiaryComponent } from './transference-beneficiary/tra
 import {MultiSelectModule} from 'primeng/multiselect';
 import { TransferenceSummaryComponent } from './transference-summary/transference-summary.component';
 import { BanksConfirmComponent } from './banks-confirm/banks-confirm.component';
+import { StatementComponent } from './statement/statement.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { BanksConfirmComponent } from './banks-confirm/banks-confirm.component';
     TransferenceValueComponent,
     TransferenceBeneficiaryComponent,
     TransferenceSummaryComponent,
-    BanksConfirmComponent
+    BanksConfirmComponent,
+    StatementComponent
   ],
   imports: [
     BrowserAnimationsModule,

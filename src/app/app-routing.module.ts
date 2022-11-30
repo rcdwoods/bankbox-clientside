@@ -1,3 +1,4 @@
+import { StatementComponent } from './statement/statement.component';
 import { BanksConfirmComponent } from './banks-confirm/banks-confirm.component';
 import { TransferenceSummaryComponent } from './transference-summary/transference-summary.component';
 import { TransferenceBeneficiaryComponent } from './transference-beneficiary/transference-beneficiary.component';
@@ -27,7 +28,8 @@ const routes: Routes = [
   { path: 'transference-value', component: TransferenceValueComponent },
   { path: 'transference-beneficiary', component: TransferenceBeneficiaryComponent },
   { path: 'transference-summary', component: TransferenceSummaryComponent },
-  { path: 'confirm-bank', component: BanksConfirmComponent }
+  { path: 'confirm-bank', component: BanksConfirmComponent },
+  { path: 'statement', component: StatementComponent }
 ];
 
 @NgModule({

@@ -1,0 +1,50 @@
+<div class="app grid col-12">
+  <div class="container grid col-12">
+    <div class="header grid col-12">
+      <a class="col-12" href="javascript:;" [routerLink]="['/home']" routerLinkActive="active"><i class="pi pi-arrow-left"></i></a>
+      <div class="header__title col-12">
+        <p>Extrato</p>
+      </div>
+    </div>
+    <div class="selections grid col-12">
+      <div class="selections__month grid col-6">
+        <div class="selections__title col-12">
+          <p>Mês</p>
+        </div>
+        <p-multiSelect class="form__input col-12" [filter]="false" [showHeader]="false" [selectionLimit]="1" [options]="months" [(ngModel)]="month" optionLabel="name"></p-multiSelect>
+      </div>
+      <div class="selections__bank grid col-6">
+        <div class="selections__title col-12">
+          <p>Banco</p>
+        </div>
+        <p-multiSelect class="form__input col-12" [filter]="false" [showHeader]="false" [selectionLimit]="1" [options]="banks" [(ngModel)]="bank" optionLabel="name"></p-multiSelect>
+      </div>
+    </div>
+    <div class="balance grid col-12">
+      <div class="balance__title col-12">
+        <p>Saldo atual</p>
+      </div>
+      <div class="balance__value col-12">
+        <p>R$ {{balanceDetails?.getFormattedTotalBalance()}}</p>
+      </div>
+    </div>
+    <div class="statements grid col-12">
+      <div class="statements__item grid col-12">
+        <div class="statements__date">
+          <p>Dia <span>26/11</span></p>
+        </div>
+        <div class="statements__transference">
+          <div class="statements__bank">
+
+          </div>
+          <div class="statements__info">
+
+          </div>
+          <div class="statements__value">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
