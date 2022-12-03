@@ -43,7 +43,7 @@ export class TransferenceService {
   doTransference(transactions: Transaction[]) {
     const user = this.loginService.getUser()
     const headers = new HttpHeaders(({ Authorization: 'Basic ' + user.authData }))
-    return this.httpClient.post<Transaction[]>('https://api.bankbox.com.br/v1/transactions', transactions, { headers })
+    return this.httpClient.post<void>('https://api.bankbox.com.br/v1/transactions', transactions, { headers })
   }
 
   getTransactions(): Observable<DateTransaction[]> {

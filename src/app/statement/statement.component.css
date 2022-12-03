@@ -92,7 +92,11 @@
 }
 
 .statements {
-  padding-top: 30px;
+  padding-top: 10px;
+}
+
+statements__item {
+  padding-top: 20px;
 }
 
 .statements__date p {
