@@ -1,3 +1,4 @@
+import { DateTransaction } from './../models/DateTransaction';
 import { LoginService } from './login.service';
 import { Observable } from 'rxjs';
 import { BankAccount } from './../models/BankAccount';
@@ -43,5 +44,11 @@ export class TransferenceService {
     const user = this.loginService.getUser()
     const headers = new HttpHeaders(({ Authorization: 'Basic ' + user.authData }))
     return this.httpClient.post<Transaction[]>('https://api.bankbox.com.br/v1/transactions', transactions, { headers })
+  }
+
+  getTransactions(): Observable<DateTransaction[]> {
+    const user = this.loginService.getUser()
+    const headers = new HttpHeaders(({ Authorization: 'Basic ' + user.authData }))
+    return this.httpClient.get<DateTransaction[]>(`https://api.bankbox.com.br/v1/transactions?costumer_id=${user.id}`, { headers })
   }
 }
