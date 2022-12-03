@@ -37,7 +37,7 @@
 
     <div class="functionalities grid col-12">
       <div class="functionalities__pix col-4">
-        <a href="javascript:;" [routerLink]="['/transference']" routerLinkActive="router-link-active" >
+        <a href="javascript:;" [routerLink]="['/pix']" routerLinkActive="router-link-active" >
           <div class="functionalities__box">
             <img src="../../assets/imgs/pix.png">
             <p>Pix</p>
@@ -103,9 +103,13 @@
                 <p>Agência</p>
                 <p>{{bank.agency}}</p>
               </div>
-              <div class="banks__account col-9">
+              <div class="banks__account col-5">
                 <p>Conta</p>
                 <p>{{bank.account}}</p>
+              </div>
+              <div class="banks__pix col-4" *ngIf="bank.pix_key">
+                <p>Pix</p>
+                <p>{{bank.pix_key}}</p>
               </div>
             </a>
           </div>

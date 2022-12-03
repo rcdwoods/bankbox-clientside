@@ -19,15 +19,8 @@ import { DatePipe } from '@angular/common';
 export class StatementComponent implements OnInit {
 
   month?: {name: string, code: string}[] = [{name: 'Novembro', code: '2022-11'}]
-  bank?: {name: string, code: string}[] = [{name: 'Todos', code: 'ALL'}]
-  banks = [
-    {name: 'Todos', code: 'ALL'},
-    {name: 'Banco do Brasil', code: 'BANCO_DO_BRASIL'},
-    {name: 'Bradesco', code: 'BRADESCO'},
-    {name: 'Itau', code: 'ITAU'},
-    {name: 'Nubank', code: 'NUBANK'},
-    {name: 'Santander', code: 'SANTANDER'}
-  ]
+  bank: Bank[] = [{formatted_name: 'Todos', name: 'ALL'}]
+  banks: Bank[] = [{formatted_name: 'Todos', name: 'ALL'}]
   months = [
     {name: 'Dezembro', code: '2022-12'},
     {name: 'Novembro', code: '2022-11'}
@@ -46,7 +39,10 @@ export class StatementComponent implements OnInit {
 
   ngOnInit(): void {
     this.banksService.getBanks().subscribe(
-      (data) => this.customerBanks = data.map(bank => Object.assign(new BankAccount(), bank))
+      (data) => {
+        this.customerBanks = data.map(bank => Object.assign(new BankAccount(), bank))
+        this.customerBanks.forEach(bankAccount => this.banks?.push(bankAccount.bank!!))
+      }
     )
     this.costumerService.getBalanceDetails().subscribe(
       (data) => this.balanceDetails = Object.assign(new BalanceDetails(), data)

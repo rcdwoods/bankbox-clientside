@@ -1,0 +1,48 @@
+<div class="app grid col-12">
+  <div class="container grid col-12">
+    <div class="header grid col-12">
+      <a class="col-12" href="javascript:;" [routerLink]="['/pix-value']" routerLinkActive="active"><i class="pi pi-arrow-left"></i></a>
+      <div class="header__title col-12">
+        <p>Para quem você quer transferir R$ {{value}}?</p>
+      </div>
+    </div>
+    <div class="forms grid col-12">
+      <div class="form grid col-12">
+        <div class="form__input col-10">
+          <input pInputText type="text" [(ngModel)]="pix_key" maxlength="60" (keypress)="validateIsNumber($event)" placeholder="Digite a chave Pix">
+        </div>
+        <a href="javascript:;" class="form__button col-2" (click)="setBeneficiary()">
+          <i class="pi pi-angle-right"></i>
+        </a>
+      </div>
+    </div>
+    <div class="my-accounts">
+      <div class="my-accounts__title">
+        <p>Minhas contas</p>
+      </div>
+
+      <div class="my-accounts__items grid col-12">
+        <div class="my-accounts__item grid col-12" *ngFor="let bankAccount of getMyAccountsWithPix()">
+          <a class="grid col-12" href="javascript:;" (click)="setAccountAsBeneficiary(bankAccount)">
+            <div class="my-accounts__logo col-2">
+              <img src={{bankAccount?.bank?.img_url}}>
+            </div>
+            <div class="my-accounts__info col-9">
+              <p>{{bankAccount.bank?.formatted_name}} - {{bankAccount.getAccountTypeTranslated()}}</p>
+            </div>
+            <div class="my-accounts__button col-1"><i class="pi pi-angle-right"></i></div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contacts">
+      <div class="contacts__title">
+        <p>Contatos</p>
+      </div>
+    </div>
+    <div class="button col-12">
+      <button class="button__avancar col-12" pButton label="Adicionar contato" iconPos="right" icon="pi pi-angle-right"></button>
+    </div>
+  </div>
+</div>

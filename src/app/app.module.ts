@@ -27,6 +27,11 @@ import { TransferenceSummaryComponent } from './transference-summary/transferenc
 import { BanksConfirmComponent } from './banks-confirm/banks-confirm.component';
 import { StatementComponent } from './statement/statement.component';
 import { DatePipe } from '@angular/common';
+import { PixComponent } from './pix/pix.component';
+import { PixSelectComponent } from './pix-select/pix-select.component';
+import { PixValueComponent } from './pix-value/pix-value.component';
+import { PixBeneficiaryComponent } from './pix-beneficiary/pix-beneficiary.component';
+import { PixSummaryComponent } from './pix-summary/pix-summary.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +49,12 @@ import { DatePipe } from '@angular/common';
     TransferenceBeneficiaryComponent,
     TransferenceSummaryComponent,
     BanksConfirmComponent,
-    StatementComponent
+    StatementComponent,
+    PixComponent,
+    PixSelectComponent,
+    PixValueComponent,
+    PixBeneficiaryComponent,
+    PixSummaryComponent
   ],
   imports: [
     BrowserAnimationsModule,

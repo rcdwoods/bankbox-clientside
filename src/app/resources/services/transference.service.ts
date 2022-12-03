@@ -40,6 +40,12 @@ export class TransferenceService {
     return this.httpClient.get<BankAccount[]>(`https://api.bankbox.com.br/v1/bank_accounts?bank=${bank}&agency=${agency}&account=${account}`, { headers })
   }
 
+  getBeneficiaryByPix(pix_key: string): Observable<BankAccount[]> {
+    const user = this.loginService.getUser()
+    const headers = new HttpHeaders(({ Authorization: 'Basic ' + user.authData }))
+    return this.httpClient.get<BankAccount[]>(`https://api.bankbox.com.br/v1/bank_accounts?pix_key=${pix_key}`, { headers })
+  }
+
   doTransference(transactions: Transaction[]) {
     const user = this.loginService.getUser()
     const headers = new HttpHeaders(({ Authorization: 'Basic ' + user.authData }))

@@ -1,3 +1,7 @@
+import { PixSummaryComponent } from './pix-summary/pix-summary.component';
+import { PixBeneficiaryComponent } from './pix-beneficiary/pix-beneficiary.component';
+import { PixValueComponent } from './pix-value/pix-value.component';
+import { PixSelectComponent } from './pix-select/pix-select.component';
 import { StatementComponent } from './statement/statement.component';
 import { BanksConfirmComponent } from './banks-confirm/banks-confirm.component';
 import { TransferenceSummaryComponent } from './transference-summary/transference-summary.component';
@@ -29,7 +33,11 @@ const routes: Routes = [
   { path: 'transference-beneficiary', component: TransferenceBeneficiaryComponent },
   { path: 'transference-summary', component: TransferenceSummaryComponent },
   { path: 'confirm-bank', component: BanksConfirmComponent },
-  { path: 'statement', component: StatementComponent }
+  { path: 'statement', component: StatementComponent },
+  { path: 'pix', component: PixSelectComponent },
+  { path: 'pix-value', component: PixValueComponent },
+  { path: 'pix-beneficiary', component: PixBeneficiaryComponent },
+  { path: 'pix-summary', component: PixSummaryComponent }
 ];
 
 @NgModule({

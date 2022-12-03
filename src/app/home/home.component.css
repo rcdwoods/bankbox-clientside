@@ -279,6 +279,16 @@
 
 }
 
+.banks__pix p:first-of-type {
+  font-size: 12px;
+  color: #6f757e;
+}
+
+.banks__pix p:last-of-type {
+  font-size: 18px;
+  color: #6f757e;
+}
+
 .banks__account p:first-of-type {
   font-family: 'Circular Std Book';
   font-size: 12px;

@@ -8,10 +8,16 @@ export class BankAccount {
   public balance?: string
   public bank?: Bank
   public bank_account_type?: string
+  public pix_key?: string
 
   getAccountType(): string {
     if (this.bank_account_type === 'CHECKING') return 'Conta corrente'
     else return 'Conta poupança'
+  }
+
+  getAccountTypeTranslated(): string {
+    if (this.bank_account_type === 'CHECKING') return 'Corrente'
+    else return 'Poupança'
   }
 
   getStyle() {

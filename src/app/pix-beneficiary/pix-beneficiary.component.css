@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  height: 100vh;
+  background-color: #3658E1;
+}
+
+.container {
+  display: block;
+  max-height: 760px;
+  background-color: white;
+  border: 15px solid #252A31;
+  border-radius: 12px;
+  min-width: 400px;
+  max-width: 400px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.header {
+  padding-top: 40px;
+}
+
+.header__title {
+  padding-top: 40px;
+  max-width: 300px;
+}
+
+.header__title p {
+  font-size: 22px;
+}
+
+.forms {
+  padding-top: 25px;
+}
+
+.form {
+  border-radius: 8px;
+  background-color: #EFF2F5;
+}
+
+.form__button {
+  margin: 0;
+  height: 100%;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.form__button i {
+  font-size: 20px;
+}
+
+.form__input input {
+  width: 100%;
+  height: 40px;
+  color: #252A31;
+  font-size: 14px;
+  background-color: transparent;
+  border: none;
+  padding-left: 20px;
+  box-shadow: none;
+}
+
+.form__input .input {
+  width: 100%;
+}
+
+.form__input::ng-deep .p-multiselect {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+}
+
+.form__input::ng-deep .p-multiselect-label-container {
+  height: 100%;
+  padding-left: 0
+}
+
+.form__input .input::ng-deep .p-inputtext {
+  padding: 0;
+  width: 100%;
+  height: 40px;
+  color: #252A31;
+  font-size: 14px;
+  background-color: transparent;
+  border: none;
+}
+
+.form__input .input::ng-deep .p-inputtext:focus {
+  box-shadow: none;
+}
+
+.form {
+  border-radius: 8px;
+  background-color: #EFF2F5;
+  height: 40px;
+}
+
+.form .input {
+  color: #252A31;
+  font-size: 14px;
+  background-color: transparent;
+  height: 40px;
+  border: none;
+}
+
+.form .input::ng-deep .p-inputtext {
+  padding: 0;
+  color: #252A31;
+  font-size: 14px;
+  background-color: transparent;
+  margin-left: 0px;
+  height: 40px;
+  border: none;
+}
+
+.form .input::ng-deep .p-inputtext:focus {
+  box-shadow: none;
+  border: none;
+}
+
+.button {
+  padding-top: 10px;
+}
+
+.button__avancar {
+  height: 50px;
+  background-color: transparent;
+  border: none
+}
+
+.button__avancar:hover {
+  background-color: transparent;
+}
+
+.button__avancar::ng-deep .p-button-label {
+  text-align: left;
+  color: #3658E1;
+}
+
+.button__avancar::ng-deep .p-button-icon {
+  font-size: 22px;
+  color: #8EA3B7;
+}
+
+.my-accounts {
+  padding-top: 30px;
+}
+
+.my-accounts__title p {
+  font-size: 20px;
+}
+
+.contacts {
+  padding-top: 30px;
+}
+
+.contacts__title p {
+  font-size: 20px;
+}
+
+.my-accounts__item {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.my-accounts__info {
+  padding-top: 7px;
+  font-size: 14px;
+}
+
+.my-accounts__button i {
+  padding-top: 4px;
+  float: right;
+  font-size: 24px;
+  color: #8EA3B7;
+}
+
+.my-accounts__items {
+  padding-top: 10px;
+}
+
+.my-accounts__item {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.my-accounts__item:hover {
+  background-color: #f1f1f1;;
+}
+
+.my-accounts__logo {
+  padding-left: 5px;
+  display: block
+}
+
+.my-accounts__logo img {
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+}
+
+@media(max-width: 500px) {
+  .app {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    min-width: none;
+    max-width: none;
+  }
+
+  .container {
+    padding: 0;
+    margin: 0;
+    height: auto;
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    min-width: 0px;
+    max-width: none;
+  }
+}

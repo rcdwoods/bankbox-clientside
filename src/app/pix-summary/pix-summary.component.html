@@ -1,0 +1,66 @@
+<div class="app grid col-12">
+  <div class="container grid col-12">
+    <div class="header grid col-12">
+      <a class="col-12" href="javascript:;" [routerLink]="['/pix-beneficiary']" routerLinkActive="active"><i class="pi pi-arrow-left"></i></a>
+      <div class="header__title col-12">
+        <p>Transferir</p>
+      </div>
+    </div>
+    <div class="banks">
+      <div class="banks__item grid" *ngFor="let transaction of transactions">
+        <div class="banks__name col-12">
+          <p>De {{getBankName(transaction)}}</p>
+        </div>
+        <div class="banks__value grid col-12">
+          <div class="form__text col-2"><p [ngClass]="{'form__text--disabled': sourceIsBeneficiary(transaction)}">R$</p></div>
+          <div class="form__input col-10">
+            <input pInputText type="text" [(ngModel)]="transaction.value" [disabled]="sourceIsBeneficiary(transaction)" (keypress)="validateIsNumber($event)">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="beneficiary grid col-12">
+      <div class="beneficiary__title col-12">
+        <p>Para</p>
+      </div>
+      <div class="beneficiary__name col-12">
+        <p>{{costumerBeneficiary?.name}}</p>
+      </div>
+      <div class="beneficiary__bank col-12">
+        <p>{{beneficiary?.bank?.formatted_name}}</p>
+      </div>
+      <div class="beneficiary__agency col-12">
+        <p>Pix {{beneficiary?.pix_key}}</p>
+      </div>
+    </div>
+    <div class="transference__date-value grid col-12">
+      <div class="date grid col-6">
+        <div class="date__title col-12">
+          <p>Data</p>
+        </div>
+        <div class="date__moment col-12">
+          <p>Agora</p>
+        </div>
+      </div>
+      <div class="value grid col-6">
+        <div class="value__title col-12">
+          <p>Valor</p>
+        </div>
+        <div class="value__total col-12">
+          <p>R$ {{getTotal()}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="transference">
+      <div class="transference__title">
+        <p>Tipo de transferência</p>
+      </div>
+      <div class="transference__type">
+        <p>Pix</p>
+      </div>
+    </div>
+    <div class="button col-12">
+      <button class="button__avancar button__avancar--filled col-12" pButton label="Avançar" [disabled]="!transferedValueIsCorrect()" (click)="doTransference()"></button>
+    </div>
+  </div>
+</div>
