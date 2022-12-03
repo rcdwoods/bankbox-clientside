@@ -29,6 +29,6 @@ export class LoginService {
   }
 
   public getUser(): Costumer {
-    return JSON.parse(localStorage.getItem('auth')!!) as Costumer
+    return Object.assign(JSON.parse(localStorage.getItem('auth')!!) as Costumer, new Costumer())
   }
 }
