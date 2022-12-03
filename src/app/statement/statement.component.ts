@@ -67,7 +67,6 @@ export class StatementComponent implements OnInit {
   getValueFormatted(transaction: Transaction) {
     let symbol = transaction.flow === 'INBOUND' ? '+' : '-'
     let value = new String(transaction.value!!)
-    if (!value.includes(',')) value = value.concat(',00')
     return `${symbol} R$ ${value?.replace('.', ',')}`
   }
 
