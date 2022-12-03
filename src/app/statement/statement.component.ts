@@ -76,14 +76,12 @@ export class StatementComponent implements OnInit {
   }
 
   getBank(transaction: Transaction) {
-    let user = this.loginService.getUser()
     if (transaction.flow === 'INBOUND') return transaction.beneficiary?.bank
     return transaction.source?.bank
   }
 
   getAccount(transaction: Transaction) {
-    let user = this.loginService.getUser()
-    if (transaction.type === 'INBOUND' && transaction.beneficiary_id === user.id) return transaction.beneficiary?.account
+    if (transaction.flow === 'INBOUND') return transaction.beneficiary?.account
     return transaction.source?.account
   }
 }

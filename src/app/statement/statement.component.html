@@ -35,7 +35,7 @@
         </div>
         <div class="statements__transference grid col-12" *ngFor="let transaction of dateTransaction.transactions">
           <div class="statements__bank col-2">
-            <img class="statements__img" src={{transaction.source?.bank?.img_url}}>
+            <img class="statements__img" src={{getBank(transaction)?.img_url}}>
           </div>
           <div class="statements__info col-6">
             <p>{{formattedType(transaction)}}</p>
