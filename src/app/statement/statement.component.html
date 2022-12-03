@@ -29,19 +29,20 @@
       </div>
     </div>
     <div class="statements grid col-12">
-      <div class="statements__item grid col-12">
-        <div class="statements__date">
-          <p>Dia <span>26/11</span></p>
+      <div class="statements__item grid col-12" *ngFor="let dateTransaction of dateTransactions">
+        <div class="statements__date col-12">
+          <p>Dia <span>{{dateTransaction.performed_at | date:'dd/MM'}}</span></p>
         </div>
-        <div class="statements__transference">
-          <div class="statements__bank">
-
+        <div class="statements__transference grid col-12" *ngFor="let transaction of dateTransaction.transactions">
+          <div class="statements__bank col-2">
+            <img class="statements__img" src={{transaction.source?.bank?.img_url}}>
           </div>
-          <div class="statements__info">
-
+          <div class="statements__info col-6">
+            <p>{{formattedType(transaction)}}</p>
+            <p>{{transaction.performed_at | date:'HH:mm'}} - {{getAccount(transaction)}} {{transaction.beneficiary?.customer_first_name}}</p>
           </div>
-          <div class="statements__value">
-
+          <div class="statements__flow col-4">
+            <div class="statements__value" [ngStyle]="{'color': transaction.flow === 'INBOUND' ? '#97DC60' : '#D74F4F'}">{{getValueFormatted(transaction)}}</div>
           </div>
         </div>
       </div>

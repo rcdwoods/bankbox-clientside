@@ -105,6 +105,50 @@
   font-size: 18px !important;
 }
 
+.statements__transference {
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 6px;
+  background-color: #EFF2F5;
+}
+
+.statements__bank {
+  padding-top: 6px;
+  padding-left: 18px;
+}
+
+.statements__img {
+  height: 28px;
+  border-radius: 100%;
+}
+
+.statements__info {
+  padding-left: 10px;
+}
+
+.statements__info p {
+  font-size: 14px;
+  font-family: 'Circular Std Book';
+  color: #697D95;
+}
+
+.statements__info p:first-of-type {
+  font-size: 16px;
+  color: #3d405b;
+  margin-bottom: 2px;
+}
+
+.statements__flow {
+  text-align: right;
+  padding-top: 2px;
+  padding-right: 10px;
+}
+
+.statements__value {
+  font-size: 14px;
+}
+
 @media(max-width: 500px) {
   .app {
     background-color: white;
