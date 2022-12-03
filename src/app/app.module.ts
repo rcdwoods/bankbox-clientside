@@ -26,6 +26,7 @@ import {MultiSelectModule} from 'primeng/multiselect';
 import { TransferenceSummaryComponent } from './transference-summary/transference-summary.component';
 import { BanksConfirmComponent } from './banks-confirm/banks-confirm.component';
 import { StatementComponent } from './statement/statement.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,7 @@ import { StatementComponent } from './statement/statement.component';
     MultiSelectModule,
     ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
