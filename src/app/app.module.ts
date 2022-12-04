@@ -32,6 +32,7 @@ import { PixSelectComponent } from './pix-select/pix-select.component';
 import { PixValueComponent } from './pix-value/pix-value.component';
 import { PixBeneficiaryComponent } from './pix-beneficiary/pix-beneficiary.component';
 import { PixSummaryComponent } from './pix-summary/pix-summary.component';
+import { CreditcardsComponent } from './creditcards/creditcards.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { PixSummaryComponent } from './pix-summary/pix-summary.component';
     PixSelectComponent,
     PixValueComponent,
     PixBeneficiaryComponent,
-    PixSummaryComponent
+    PixSummaryComponent,
+    CreditcardsComponent
   ],
   imports: [
     BrowserAnimationsModule,

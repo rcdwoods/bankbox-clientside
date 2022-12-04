@@ -1,0 +1,51 @@
+<div class="app grid col-12">
+  <div class="container grid col-12">
+    <div class="header col-12">
+      <a href="#" [routerLink]="['/home']" routerLinkActive="active" ><i class="pi pi-arrow-left"></i></a>
+      <div class="header__title col-12">
+        <p>Meus bancos</p>
+      </div>
+    </div>
+    <div class="menu grid col-12">
+      <div class="menu__options grid col-10">
+        <a class="col-6" href="javascript:;" (click)="selectOption('PHYSICAL')">
+          <menu class="menu__option col-12" [ngClass]="{'menu__option--selected ': selectedOption == 'PHYSICAL'}">
+            <p>Físico</p>
+          </menu>
+        </a>
+        <a class="col-6" href="javascript:;" (click)="selectOption('VIRTUAL')">
+          <menu class="menu__option col-12" [ngClass]="{'menu__option--selected ': selectedOption == 'VIRTUAL'}">
+            <p>Virtual</p>
+          </menu>
+        </a>
+      </div>
+    </div>
+    <div class="banks grid col-12">
+      <div class="banks__items grid col-12">
+        <div class="banks__item grid col-12" *ngFor="let card of getBanksByAccountType()">
+          <a class="grid col-12" href="javascript:;" (click)="selectBank(card)">
+            <div class="cards__logo col-6">
+              <p>Cartão de crédito</p>
+            </div>
+            <div class="cards__level col-6">
+              <p>GOLD</p>
+            </div>
+            <div class="cards__info col-8">
+              <p class="cards__owner">{{card.owner}}</p>
+              <p class="cards__number">•••• {{card.last_numbers}}</p>
+            </div>
+            <div class="cards__brand col-4">
+              <img src={{card.getImgUrl()}}>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="cards__unified-button col-12">
+        <button class="col-12" pButton label="Gerar limite unificado" ></button>
+      </div>
+      <div class="banks__button col-12">
+        <button class="col-12" pButton label="Adicionar cartão" [routerLink]="['/choose-bank']" routerLinkActive="router-link-active" ></button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,5 @@
+import { CreditcardsService } from './../resources/services/creditcards.service';
+import { CreditCard } from './../resources/models/CreditCard';
 import { BankAccount } from './../resources/models/BankAccount';
 import { BanksService } from './../resources/services/banks.service';
 import { BalanceDetails } from './../resources/models/BalanceDetails';
@@ -34,9 +36,17 @@ export class HomeComponent implements OnInit {
       number: '9257'
     }
   ]
+  cards2: CreditCard[] = []
   banks?: BankAccount[]
 
-  constructor(private router: Router, private costumerService: CostumerService, private banksService: BanksService) { }
+  constructor(
+    private router: Router,
+    private costumerService: CostumerService,
+    private banksService: BanksService,
+    private creditCardsService: CreditcardsService
+    ) {
+
+    }
 
   ngOnInit(): void {
     this.costumer = JSON.parse(localStorage.getItem('auth')!!) as Costumer
@@ -50,6 +60,10 @@ export class HomeComponent implements OnInit {
       (data) => this.balanceDetails = Object.assign(new BalanceDetails(), data),
       (error) => console.log('Erro ao obter balance details')
       )
+    this.creditCardsService.getCreditCards().subscribe(
+      (data) => this.cards2 = data.map(creditCard => Object.assign(new CreditCard(), creditCard)),
+      (error) => console.log(error)
+    )
     if (!this.costumer) this.router.navigateByUrl('')
   }
 

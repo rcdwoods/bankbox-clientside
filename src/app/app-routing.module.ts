@@ -1,3 +1,4 @@
+import { CreditcardsComponent } from './creditcards/creditcards.component';
 import { PixSummaryComponent } from './pix-summary/pix-summary.component';
 import { PixBeneficiaryComponent } from './pix-beneficiary/pix-beneficiary.component';
 import { PixValueComponent } from './pix-value/pix-value.component';
@@ -37,7 +38,8 @@ const routes: Routes = [
   { path: 'pix', component: PixSelectComponent },
   { path: 'pix-value', component: PixValueComponent },
   { path: 'pix-beneficiary', component: PixBeneficiaryComponent },
-  { path: 'pix-summary', component: PixSummaryComponent }
+  { path: 'pix-summary', component: PixSummaryComponent },
+  { path: 'credit-cards', component: CreditcardsComponent }
 ];
 
 @NgModule({

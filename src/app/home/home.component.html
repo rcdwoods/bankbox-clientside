@@ -61,18 +61,20 @@
         </a>
       </div>
       <div class="cards grid col-12">
-        <div class="cards__title col-10">
-          <p>Meus Cartões</p>
-        </div>
-        <div class="cards__button col-2"><i class="pi pi-angle-right"></i></div>
+        <a class="grid col-12" href="javascript:;" [routerLink]="['/credit-cards']" routerLinkActive="router-link-active" >
+          <div class="cards__title col-10">
+            <p>Meus Cartões</p>
+          </div>
+          <div class="cards__button col-2"><i class="pi pi-angle-right"></i></div>
+        </a>
         <div class="cards__items">
-          <div class="cards__card grid col-6" *ngFor="let card of cards">
+          <div class="cards__card grid col-6" *ngFor="let card of cards2">
             <div class="cards__box grid col-12">
               <div class="cards__logo col-4">
-                <img src={{card.imgUrl}}>
+                <img src={{card.getImgUrl()}}>
               </div>
               <div class="cards__number col-8">
-                <p>•••• {{card.number}}</p>
+                <p>•••• {{card.last_numbers}}</p>
               </div>
             </div>
           </div>
