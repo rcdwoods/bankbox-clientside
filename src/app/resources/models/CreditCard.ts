@@ -7,6 +7,7 @@ export class CreditCard {
   public security_number?: number
   public type?: string
   public brand?: string
+  public creditLimit?: string
 
   public getImgUrl() {
     let brand = this.brand?.toLowerCase()

@@ -102,6 +102,10 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+.banks__item--unified {
+  background-color: #5270e6;
+}
+
 .banks__balance {
   text-align: right;
 }
@@ -221,10 +225,11 @@
 }
 
 .cards__info {
-  padding-top: 80px;
+  padding-top: 35px;
 }
 
 .cards__info p:first-of-type {
+  font-family: 'Circular Std Book';
   font-size: 14px;
 }
 
@@ -233,13 +238,23 @@
 }
 
 .cards__brand {
-  padding-top: 83px;
+  padding-top: 35px;
   padding-right: 5px;
 }
 
 .cards__brand img {
   float: right;
   height: 40px;
+}
+
+.cards__limit {
+  font-family: 'Circular Std Book';
+  padding-top: 20px;
+  font-size: 14px;
+}
+
+.cards__limit-value {
+  font-size: 18px;
 }
 
 @media(max-width: 500px) {

@@ -19,4 +19,10 @@ export class CreditcardsService {
     return this.httpClient.get<CreditCard[]>(`https://api.bankbox.com.br/v1/credit_cards?customer_id=${user.id}`, { headers })
   }
 
+  public unifyCreditCards(): Observable<CreditCard> {
+    const user = this.loginService.getUser()
+    const headers = new HttpHeaders(({ Authorization: 'Basic ' + user.authData }))
+    return this.httpClient.post<CreditCard>(`https://api.bankbox.com.br/v1/credit_cards/unified?customer_id=${user.id}`, { headers })
+  }
+
 }

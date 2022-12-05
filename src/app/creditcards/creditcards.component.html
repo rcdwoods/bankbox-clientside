@@ -22,13 +22,15 @@
     </div>
     <div class="banks grid col-12">
       <div class="banks__items grid col-12">
-        <div class="banks__item grid col-12" *ngFor="let card of getBanksByAccountType()">
+        <div class="banks__item grid col-12" *ngFor="let card of getBanksByAccountType()" [ngClass]="{'banks__item--unified': isBankBoxCard(card)}">
           <a class="grid col-12" href="javascript:;" (click)="selectBank(card)">
-            <div class="cards__logo col-6">
+            <div class="cards__logo col-8">
               <p>Cartão de crédito</p>
+              <p class="cards__limit">Limite:</p>
+              <p class="cards__limit-value">R$ {{card.creditLimit}}</p>
             </div>
-            <div class="cards__level col-6">
-              <p>GOLD</p>
+            <div class="cards__level col-4">
+              <p>Platinum</p>
             </div>
             <div class="cards__info col-8">
               <p class="cards__owner">{{card.owner}}</p>
@@ -41,7 +43,7 @@
         </div>
       </div>
       <div class="cards__unified-button col-12">
-        <button class="col-12" pButton label="Gerar limite unificado" ></button>
+        <button class="col-12" pButton label="Gerar limite unificado" (click)="unifyCards()" *ngIf="!hasUnifiedCards()"></button>
       </div>
       <div class="banks__button col-12">
         <button class="col-12" pButton label="Adicionar cartão" [routerLink]="['/choose-bank']" routerLinkActive="router-link-active" ></button>

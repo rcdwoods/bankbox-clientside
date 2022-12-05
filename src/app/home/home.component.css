@@ -156,6 +156,7 @@
 
 .cards__card {
   padding-top: 20px;
+  padding-right: 20px;
 }
 
 .cards__items {
@@ -175,6 +176,10 @@
   border-radius: 8px;
 }
 
+.cards__card--unified {
+  background-color: #5270e6;
+}
+
 .cards__button i {
   padding-top: 4px;
   float: right;
@@ -189,6 +194,10 @@
 .cards__logo {
   padding-top: 7px;
   padding-left: 7px;
+}
+
+.cards__logo img {
+  height: 20px;
 }
 
 .cards__number {

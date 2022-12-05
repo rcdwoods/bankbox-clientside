@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { CreditcardsService } from './../resources/services/creditcards.service';
 import { CreditCard } from './../resources/models/CreditCard';
 import { BankAccount } from './../resources/models/BankAccount';
@@ -16,7 +17,11 @@ export class CreditcardsComponent implements OnInit {
   banks: BankAccount[] = []
   cards: CreditCard[] = []
 
-  constructor(private banksService: BanksService, private creditCardsService: CreditcardsService) { }
+  constructor(
+    private banksService: BanksService,
+    private creditCardsService: CreditcardsService,
+    private toastrService: ToastrService
+    ) { }
 
   ngOnInit(): void {
     this.banksService.getBanks().subscribe(
@@ -25,6 +30,10 @@ export class CreditcardsComponent implements OnInit {
       },
       (erro) => console.log('Erro ao obter bancos')
     )
+    this.updateCards()
+  }
+
+  updateCards() {
     this.creditCardsService.getCreditCards().subscribe(
       (data) => this.cards = data.map(creditCard => Object.assign(new CreditCard(), creditCard)),
       (error) => console.log(error)
@@ -44,5 +53,31 @@ export class CreditcardsComponent implements OnInit {
 
   getBanksByAccountType() {
     return this.cards.filter(card => card.type == this.selectedOption)
+  }
+
+  unifyCards() {
+    this.creditCardsService.unifyCreditCards().subscribe(
+      (data) => {
+        this.updateCards()
+        this.toastrService.success('Cartão unificado gerado!')
+        this.selectedOption = 'VIRTUAL'
+      },
+      (error) => {
+        this.toastrService.error('Não foi possível unificar seus cartões :(')
+        console.log('Erro ao gerar cartão unificado')
+        console.log(error)
+      }
+    )
+  }
+
+  hasUnifiedCards() {
+    let bankBoxCards = this.cards.filter(card => card.brand === 'BANKBOX')
+    console.log(bankBoxCards)
+    return bankBoxCards.length > 0
+  }
+
+  isBankBoxCard(card: CreditCard) {
+    console.log('branch: ' + card.brand)
+    return card.brand === 'BANKBOX'
   }
 }

@@ -61,7 +61,10 @@ export class HomeComponent implements OnInit {
       (error) => console.log('Erro ao obter balance details')
       )
     this.creditCardsService.getCreditCards().subscribe(
-      (data) => this.cards2 = data.map(creditCard => Object.assign(new CreditCard(), creditCard)),
+      (data) => {
+        console.log(data)
+        this.cards2 = data.map(creditCard => Object.assign(new CreditCard(), creditCard)).sort(item => Number(item.creditLimit))
+      },
       (error) => console.log(error)
     )
     if (!this.costumer) this.router.navigateByUrl('')
@@ -76,5 +79,10 @@ export class HomeComponent implements OnInit {
     let lastValue = this.banks!![this.banks!!.length - 1]
     this.banks!![index] = lastValue
     this.banks!![this.banks!!.length - 1] = bank
+  }
+
+  isBankBoxCard(card: CreditCard) {
+    console.log('branch: ' + card.brand)
+    return card.brand === 'BANKBOX'
   }
 }
